@@ -1,0 +1,84 @@
+
+         <ion-header>
+
+          <ion-navbar>
+            <ion-title>{{teams.team_name}}</ion-title>
+            <ion-buttons end>
+                <button style="color: #ffd033;" (click)="share()" ion-button icon-only>
+                <!-- <ion-icon name="star-half"></ion-icon> -->
+                <img src="../assets/imgs/facebook_share.png" style = "width: 30px;
+                height: 32px" >
+                </button>
+                
+                </ion-buttons>
+                
+          </ion-navbar>
+        
+        </ion-header>
+        
+        <ion-content class="team-bg">
+                  <ion-list>
+                      <ion-item class="game-info">
+                        <div class=img-cont>
+                          <img [src]="teams.team_logo_url" class="prof-img"> 
+                        </div>
+                        <div class=game-details>
+                            <h2>{{teams.team_name}}</h2>
+                          <div  class="game-deets-img-wrap">
+                            <h6>TOURNAMENTS</h6>
+                            <h5>GAMES</h5>
+                            <img src="../assets/imgs/game-icon-img1.png" class="game-icon-img">
+                            <h6><span>{{teams.tourn_wins}}</span></h6>
+                           </div>
+                           <div  class="game-deets-img-wrap">
+                             <h6>FRIENDLY</h6>
+                             <h5>GAMES</h5> 
+                              <img src="../assets/imgs/game-icon-img2.png" class="game-icon-img"> 
+                              <h6><span>{{teams.friendly_count}}</span></h6>
+                           </div>
+                          <div  class="game-deets-img-wrap">
+                            <h6>TEAM SCORE</h6>
+                            <h5 style="visibility: hidden">Games</h5>
+                            <img src="../assets/imgs/game-icon-img3.png" class="game-icon-img"> 
+                            <h6><span>{{teams.scores}}</span></h6>
+                          </div>
+                        </div>
+                        </ion-item>
+                      </ion-list>
+
+               
+                  <ion-list class="team-bg" >
+                    <ion-card>
+                        <ion-list class="team-bg" >
+                            <ion-item  no-lines>
+                              <h2 class="team-mem-head">TEAM MEMBERS</h2>
+                            </ion-item>
+                            <table>
+                                <tbody>
+                                  <tr *ngFor = 'let player of players ; let i = index ' (click)="showplayer(player)">
+                                    <td> 
+                                        <img style="border-radius: 50%;" [src]="player.player_image_url" class="game-icon-img"> </td>
+                                    <td> <ion-label class="team-lst">{{player.player_fname}} {{player.player_lname}} <span><sup>*</sup><span></span>({{player.player_role}})</span></ion-label></td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                                </ion-list>
+                    </ion-card>
+                    <!-- <ion-row>
+                      <ion-col *ngIf="!this.status">
+                          <button (click)="joinTeam()" ion-button icon-end class="add-plyrs-btn">
+                              Join Team
+                              <ion-icon name="add-circle"></ion-icon>
+                            </button>
+                      </ion-col>
+                      <ion-col *ngIf="this.status">
+                          <button (click)="inviteteam()" ion-button icon-end class="add-plyrs-btn">
+                              Invite Team
+                              <ion-icon name="add-circle"></ion-icon>
+                            </button>
+                      </ion-col>
+                    </ion-row> -->
+                </ion-list>
+
+               </ion-content>
+        

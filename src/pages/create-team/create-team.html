@@ -1,0 +1,109 @@
+<!--
+  Generated template for the CreateTeamPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header style="font-style: italic">
+
+    <ion-navbar>
+      <ion-title style="text-align: center;" >Create Team</ion-title>
+      <ion-buttons style="visibility: hidden;" end>
+            <button (click)="notify()" ion-button icon-only>
+            <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+            </button>
+            </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content style="font-style: italic" class="cteam_bg" >
+    <ion-card style="background-color: rgba(158, 158, 158, 0);">
+    <!-- <div class="cteam_content"> -->
+   <ion-list style="background-color: rgba(158, 158, 158, 0);">
+       <ion-item class="cteam_top"> 
+          <ion-label fixed>Team Name</ion-label>
+       <ion-input #tname class="cteam_color"  type="text" value=""></ion-input>
+       </ion-item>
+      <ion-item class="cteam_top1">  
+          <ion-label fixed>Captain</ion-label>
+      <ion-input #cname type="text" value="{{ name }}"></ion-input>
+      </ion-item>
+      <ion-item class="cteam_top1">  
+        <ion-label fixed>City</ion-label>
+    <ion-input #tcity type="text" value=""></ion-input>
+    </ion-item>
+      <!-- <ion-item class="cteam_top1">  
+          <ion-label fixed>Email</ion-label>
+      <ion-input #tmail type="email" value=""></ion-input>
+      </ion-item>
+      <ion-item class="cteam_top1">  
+          <ion-label fixed>Phone Number</ion-label>
+      <ion-input #tnumber type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item class="cteam_top1">  
+          <ion-label fixed>City</ion-label>
+      <ion-input #tcity type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item class="cteam_top1">  
+          <ion-label fixed>Team Slogon</ion-label>
+      <ion-input #tslogon type="text" value=""></ion-input>
+      </ion-item> -->
+      <ion-item class="cteam_top1">  
+          <ion-label fixed>Team Size</ion-label>
+      <ion-input #tsize type="number" value=""></ion-input>
+      </ion-item>
+     
+    </ion-list>
+      <!-- <ion-item  class="cteam_top2 "> -->
+     
+         <ion-row style="margin-top: 10%;">
+               
+            <ion-item style="background-color: rgba(158, 158, 158, 0);">
+              
+              <ion-row>  
+                  <ion-col col-4>
+
+                </ion-col>
+                <ion-col  *ngIf="!picture" col-4>
+                    <ion-avatar style="margin-left: 26%;"  item-start>
+                        <img [src]="teamlogo"/>
+                      </ion-avatar>
+                </ion-col>
+                <ion-col  *ngIf="picture"  col-4>
+                    <ion-avatar style="margin-left: 26%;"  item-start>
+                        <img [src]="picture"/>
+                      </ion-avatar>
+                </ion-col>
+                <ion-col col-4>
+                    
+                </ion-col>
+            </ion-row>
+              </ion-item>
+           
+                  <!-- </ion-col> -->
+                </ion-row>
+                <ion-row *ngIf="!picture">
+                    <button style="margin-left:31%;
+                    background-color: #1c315e;
+                    color: white;" (click)="getImage()" ion-button color="light">Choose Logo</button>
+                </ion-row>
+                <ion-row  >
+                    <button style="margin-left:31%;
+                    background-color: #1c315e;
+                    color: white;" (click)="uploadImage()" ion-button color="light">Upload Logo</button>
+                </ion-row>
+                <!-- <ion-row>
+                    <input #myFile  type="file" name="myFile">
+                </ion-row> -->
+      </ion-card>
+      <ion-row>
+          <ion-col>
+              <button (click)="myteam()" style="background-color: #1c315e;" ion-button block>Submit</button>
+          </ion-col>
+    
+        </ion-row>
+  
+  </ion-content>
+  

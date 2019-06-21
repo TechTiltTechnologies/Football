@@ -1,0 +1,32 @@
+<ion-header style="font-style: italic">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+            </button>
+      <ion-title style="text-align: center;">Play</ion-title>
+      <ion-buttons style="visibility: hidden;" end>
+          <button (click)="notify()" ion-button icon-only>
+          <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+          </button>
+          </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content style="font-style: italic" class="play-bg">
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <ion-fab>
+        <ion-row>
+          <ion-col >
+            <button (click)="tournament()" ion-fab fab-fixed color="primary" ></button>
+            <h6 class="join-title">Join Tournment Games</h6>
+          </ion-col>
+          <ion-col>
+            <button (click)="friendly()" ion-fab fab-fixed color="secondary"></button>
+            <h6 class="join-title">Join Friendly Games</h6>
+          </ion-col>
+        </ion-row>
+      </ion-fab>
+    </ion-row>
+  </ion-grid>
+</ion-content>

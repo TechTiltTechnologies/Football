@@ -1,0 +1,20 @@
+page-address-view {
+    #map {
+        height: 100%;
+        position: initial !important;
+       }
+       .toolbar-background {
+        background-color: #a94c4c;
+        //height: 24px;
+      }
+      .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #ffffff;
+        background-color: transparent;
+    }
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #ffffff;
+    }
+}

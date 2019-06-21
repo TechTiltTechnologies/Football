@@ -1,0 +1,154 @@
+
+ <ion-header style="font-style: italic">
+
+    <ion-navbar>
+      <ion-title style="text-align: center;" *ngFor="let list of lists">
+          {{list.tour_name}}
+      </ion-title>
+      <ion-buttons style="visibility: hidden;" end>
+          <button (click)="notify()" ion-button icon-only>
+          <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+          </button>
+          </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header> 
+  
+  
+ <ion-content class="team-bg" style="font-style: italic">
+             <ion-slides pager="true">
+                <ion-slide *ngFor="let list of lists">
+                  <img style="width:100%;height: 250px;" [src]="list.tour_banner_url"/>
+            
+                </ion-slide>
+              </ion-slides>
+
+
+        <ion-card style="background-color: rgba(255, 255, 255, 0.15);" *ngFor="let list of lists">
+            <ion-item  no-lines>
+                <h2 class="team-mem-head">DETAILS</h2>
+              </ion-item>
+           
+            <div style="display: flex;margin-bottom: 4%;">
+      
+           <p style="margin-left: 10%;color:#153376">VENUE:</p>
+           <p style="margin-left: 10.7%;">{{list.ground_name}},{{list.tour_address}} </p><br>
+           <!-- <p style="margin-left: 14%;">{{list.tour_address}}</p> -->
+            </div>
+      
+            <div style="display: flex;margin-bottom: 4%;">
+      
+                <p style="margin-left: 10%;color:#153376">FORMAT:</p>
+                <p style="margin-left: 10%;">{{list.tour_type}}</p>
+                 </div>
+      
+                 <div style="display: flex;margin-bottom: 4%;">
+      
+                    <p style="margin-left: 10%;color:#153376">DATE:</p>
+                    <p style="margin-left: 15.5%;">{{list.tour_startdate}} - {{list.tour_enddate}}</p>
+                     </div>
+      
+                     <div style="display: flex;margin-bottom: 4%;">
+      
+                        <p style="margin-left: 10%;color:#153376">PLAYERS:</p>
+                        <p style="margin-left: 8%;">11+3(sub) players</p>
+                         </div>
+      
+                         <div class="example-center">
+                          <button class=button1 ion-button>ENTRY FEES: {{list.tour_regfees}} per team
+                          </button>
+                        </div>
+      
+                        <p style="color: #153376;
+                        text-align: center;
+                        margin-top: 3%;">Maximum {{list.tour_teamlimit}} Teams Allowed</p>
+      
+        
+      
+         
+      
+            </ion-card>
+
+            <ion-card style="background-color: rgba(255, 255, 255, 0.15);" style="height: 53%;" *ngFor="let list of lists">
+                <ion-item  no-lines>
+                    <h2 class="team-mem-head">TEAM AWARDS</h2>
+                  </ion-item>
+              
+                <div class="card-subtitle">
+                  <div style="display:flex;margin-top: 8%">
+                    <p style="margin-left: 10%">Winner:</p>
+                    <p style="margin-left: 8%;color:#737272">{{list.tour_winner_price}}, cash, Trophy, Medals</p>
+                  </div>
+                  <div style="display:flex;margin-top: 2%">
+                      <p style="margin-left: 10%">Runner:</p>
+                      <p style="margin-left: 8%;color:#737272">{{list.tour_runner_price}}, cash, Trophy, Medals</p>
+                    </div>
+                    <div style="display:flex;margin-top: 2%">
+                        <p style="margin-left: 10%">3rd & 4th:</p>
+                        <p style="margin-left: 5%;color:#737272">Medals</p>
+                      </div>
+                      <div class="card-titlee">INDIVIDUAL AWARDS</div>
+                      <div style="margin-top: 12%;">
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let award of awards" col-6>
+            <ion-icon name="football" style="color:#123178;"></ion-icon>
+         {{award.award_name}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    </div>     
+                </div>
+              </ion-card>
+    
+              <ion-row style="background-color: rgba(255, 255, 255, 0.15);" *ngFor="let list of lists" style="margin-top: 10%;">
+                   <ion-col col-4>
+
+                   </ion-col>
+                   <ion-col col-4>
+                     
+                    
+                      <ion-avatar item-start>
+                        <img [src]="list.tour_trophy_url">
+                      </ion-avatar>
+      
+                 <p style="margin-left: 18%;
+                 font-weight: bold;">Price Trophy</p>
+                 </ion-col>
+                      <ion-col col-4>
+                     
+                   </ion-col>
+                      </ion-row>
+    
+
+ <ion-card style="background-color: rgba(255, 255, 255, 0.15);">                     
+    <ion-item  no-lines>
+        <h2 class="team-mem-head">CONTACT DETAILS</h2>
+      </ion-item>
+      <div *ngFor="let list of lists"> 
+              <ion-item>
+                <div style="margin-left: 4%;">
+                <ion-icon style="color:#123178;" item-start name="pin"></ion-icon> 
+                 {{list.tour_address}}
+                </div>
+              </ion-item>
+              <ion-item>
+                <div style="margin-left: 4%;">
+                <ion-icon style="color:#123178;" item-start name="call"></ion-icon> 
+               {{list.tour_contact}}
+              </div>
+              </ion-item>
+    
+            </div>
+          </ion-card>
+              <p class=text>Register Your Team. Only {{lefts}} Bookings are Left!!</p>
+              <div>
+                <button class=button2 (click)="register()" ion-button>REGISTER NOW</button>
+              </div>
+      
+      
+            
+      
+         
+      </ion-content>
+     

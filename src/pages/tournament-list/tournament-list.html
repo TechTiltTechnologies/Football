@@ -1,0 +1,78 @@
+<ion-header style="font-style: italic">
+    <ion-navbar >
+  
+     <!-- <div style="padding-top: 3%;"> -->
+        
+        <ion-title style="text-align: center;">Tournament List</ion-title>
+        <ion-buttons style="visibility: hidden;" end>
+            <button (click)="notify()" ion-button icon-only>
+            <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+            </button>
+            </ion-buttons>
+     <!-- </div>  -->
+            
+     
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content style="font-style: italic" class="bgback">
+           <ion-card *ngFor="let tournament of tournaments;let i= index" (click)="detail(i,tournament)" class="radius">
+            <ion-row class="transparent">
+              <ion-col col-4>
+                  <!-- <ion-avatar item-start style="border: 2px solid #153376;
+                  background: transparent;
+                  border-radius: 73%;
+                  color: #153376"> -->
+                    <img style="height: 120px;" [src] = tournament.tour_banner_url>
+                  <!-- </ion-avatar> -->
+              </ion-col>
+              <ion-col col-8>
+                  <div style="margin-left: 4%;">
+                      <p style="font-size: 17px;font-weight: 600;padding-bottom: 7px;color: #153376;font-style: italic;font-weight: 600">{{tournament.tour_name}}</p>
+                      <p style="font-size: 12px;padding-bottom: 7px;color:#00bcd4;font-style: italic;font-weight: 600"> {{tournament.tour_address}}</p>
+      
+                      <p style="font-size: 12px;padding-bottom: 7px;color: #000;font-style: italic;font-weight: 600"> Max {{tournament.tour_teamlimit}} Team Allowed</p>
+      
+                      <p style="font-size: 10px;padding-bottom: 7px;color: #000;font-style: italic;font-weight: 600"> <span style="color:#2ec95c;">Start -</span> {{tournament.tour_startdate}} <span style="color:#e13838;">End -</span> {{tournament.tour_enddate}}</p>
+                      <p style="font-size: 10px;color: #000;font-style: italic;font-weight: 600"> <span style="color:#0f2c72;">Registration Last Date -</span> {{tournament.tour_reglastdate}} </p>
+                     </div>
+                </ion-col>
+                
+               
+                 
+                </ion-row>
+    
+    
+    
+    
+    
+            <!-- <img class="imgradius" style="height: 145px;" [src] = tournament.tour_banner_url/>
+              <div class="transparent"> 
+                <div class="card-title">{{tournament.tour_name}}</div>
+                <div class="card-subtitle">Maximum {{tournament.tour_teamlimit}} teams allowed</div>
+                <div class="card-titlee">{{tournament.tour_address}}</div>
+              </div>
+             
+              <ion-card-content>
+                <ion-row>
+                    <ion-col col-6>
+                        <img style="    width: 62px;
+                        margin-left: 30%;" [src]="tournament.tour_trophy_url">
+                        <p style="margin-left: -6%;font-weight: bolder;color: #1c315e;">Winning Trophy</p>
+                      </ion-col>
+                  <ion-col col-6>
+                    <p style="font-weight: bolder;color: #1c315e;">Team Limit - {{tournament.tour_teamlimit}} teams</p>
+                    <p style="font-weight: bolder;color: #000000;"> Start Date : {{tournament.tour_startdate}}  End Date : {{tournament.tour_enddate}}</p>
+                  </ion-col>
+                  
+                </ion-row>
+              </ion-card-content> -->
+            </ion-card>
+            <div *ngIf="empty">
+              <p style="margin-top: 50%;
+              font-size: large;text-align: center">No Data Found</p>
+            </div>
+      </ion-content>
+
+  
+  

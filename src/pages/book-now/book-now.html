@@ -1,0 +1,158 @@
+<ion-header style="font-style: italic">
+  <ion-navbar>
+    <ion-title style="text-align: center;">{{"Book Now" | translate}}</ion-title>
+    <ion-buttons style="visibility: hidden;" end>
+        <button (click)="notify()" ion-button icon-only>
+        <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="font-style: italic" padding>
+  <h1 class="txt">{{details.ground_name}}</h1>
+  <p class="txtp">{{details.ground_location}}</p>
+  <ion-item>
+      <ion-label class="head">{{"Start Date" | translate}}</ion-label>
+  </ion-item>
+
+  <!-- <ion-item>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month">
+      </ion-datetime>    
+    </ion-item>  -->
+    <ion-card class="ui-g ui-fluid">
+      <ion-item class="ui-g-12 ui-md-4">
+          <!-- selectionMode="multiple" -->
+          <div> 
+        <!-- hidden sat and sunday [disabledDates]="invalidDates" [disabledDays]="[0,6]" -->
+
+               <p-calendar mindate="date"  (click)="itemTappedd($event, minimumDate)" [(ngModel)]="minimumDate" [minDate]="mindate" tabindex="0"  [inline]="true" ></p-calendar>
+        </div>
+        
+        </ion-item> 
+     
+      </ion-card>
+
+      
+  <h1 class="head">{{"Ground Size" | translate}}</h1>
+  <ion-grid>
+      <button ion-button class="slots">{{"Available Ground Size" | translate}}</button>
+      <div *ngIf="this.starttime">
+      <p class="seleted">{{"Selected" | translate}}</p>
+      <p class="hours">{{"Slots Count" | translate}} - {{slots}}</p></div>
+<ion-row>
+  
+<ion-col *ngFor="let size of sizes;let i= index" col-12 (click)="selectSize(i,size)" >
+      <button class="dinesh" [class.highlight]="selectedSize==size"  id="test"  ion-button outline block item-start>{{size.size}} - ({{size.ground_sq_ft}})<span style="margin-left: 50%;">{{size.discount_price}}</span></button>
+</ion-col>
+</ion-row>
+  </ion-grid>
+
+
+    <ion-item class="list">
+    <div class="list">
+      <ul>
+        <li class="heada" [ngClass]="{'aheada' : clanguage == 'ar'}">{{"Time" | translate}}</li>
+        <li class="available"><ion-icon name="radio-button-on"></ion-icon> {{"Available" | translate}} </li>
+        <li class="booked"><ion-icon name="radio-button-on"></ion-icon> {{"Booked" | translate}} </li>
+        <li class="notavailable"><ion-icon name="radio-button-on"></ion-icon> {{"Not Available" | translate}} </li>
+      </ul> 
+    </div>
+  </ion-item>
+  
+  <ion-grid>
+      <button ion-button class="slots">{{"Available Time Slots" | translate}}</button>
+      <div *ngIf="this.starttime">
+      <p class="seleted">{{"Selected" | translate}}</p>
+      <!-- <p class="hours">From {{starttime}} to {{endtime}} - 1 hour</p> -->
+      <p class="hours"> {{"Slots Count" | translate}} - {{slots}} </p>
+    </div>
+    <ion-row *ngIf="this.bookdate">
+        <!-- <div id="myDIV"> -->
+            <button style="margin-top: 2%;width: 100%;" class="butto active" ion-button outline>{{"Select Time" | translate}}</button>
+           
+            <ion-row>
+              <ion-col  *ngFor="let time of times;let i= index" col-3   >
+
+       <button  
+       (click)="selectTime(i,time)" 
+       [class.active]="active" 
+       [class.selectedSlot]="slotSelected(time)"
+        [class.deSelectedSlot]="!slotSelected(time)"
+        ion-button outline  >{{time}}</button>
+                
+                <!-- <input (click)="selectTime(i,time)"   type="checkbox" name="rGroup" id="{{time}}"  />
+               <label class="whatever" for="{{time}}"> 
+                  <span style="position:relative;top:4px;left: 5px;">
+                    {{time}}
+                  </span>
+                </label> -->
+                
+               
+              </ion-col>
+    
+      </ion-row>  
+
+     
+    <!-- </div>      <button (click)="active()" class="butto" ion-button outline>{{time.slot}}</button>                                         -->
+    </ion-row>
+    <div *ngIf="!this.bookdate">
+      <p>{{"Please select booked date first" | translate}}</p>
+    </div> 
+
+  </ion-grid>
+
+
+ <!-- <ion-grid style="margin-top: 4%;" *ngIf="this.starttime">
+  <button ion-button class="slots">Selected Time Slots</button>
+  <div *ngIf="this.starttime">
+  <p class="seleted">Selected</p> -->
+  <!-- <p class="hours">From {{starttime}} to {{endtime}} - 1 asd hour</p> -->
+  <!-- <p class="hours"> Slots Count - {{slots}} </p>
+</div>
+<ion-row > -->
+    <!-- <div id="myDIV"> -->
+        <!-- <button style="margin-top: 2%;width: 100%;" class="butto active" ion-button outline>Select One</button>
+       
+        <ion-row>
+          <ion-col id="checkboxess" *ngFor="let grid of grids;let i= index" (click)="ttimes(i,grid)"  col-4>
+            <input  type="checkbox" name="rGroup" id="{{grid}}" />
+            <label class="whateverr" for="{{grid}}"> 
+              <span style="position:relative;top:4px;left: 2px;font-size: xx-small;">
+                {{grid}}
+              </span>
+            </label>
+      </ion-col>
+      </ion-row>   -->
+
+ 
+<!-- </div>      <button (click)="active()" class="butto" ion-button outline>{{time.slot}}</button>                                         -->
+<!-- </ion-row>
+<div *ngIf="!this.bookdate">
+  <p>Please select booked date first</p>
+</div> 
+
+</ion-grid>  -->
+
+<!-- 
+  <h1 class="head">Ground Size</h1>
+  <ion-grid>
+      <button ion-button class="slots">Available Ground Size</button>
+      <div *ngIf="this.starttime">
+      <p class="seleted">Selected</p>
+      <p class="hours">Slots Count - {{slots}}</p></div>
+<ion-row>
+<ion-col *ngFor="let size of sizes;let i= index" col-12 (click)="selectSize(i,size)">
+      <button class="dinesh"  ion-button outline block item-start>{{size.size}} - ({{size.ground_sq_ft}})<span style="margin-left: 50%;">{{size.ground_price}}</span></button>
+</ion-col>
+</ion-row>
+  </ion-grid> -->
+
+
+  <ion-item class="items">
+      <p class="txtprice">{{"Total Price" | translate}}</p>
+      <h2 class="head">AED {{this.total_amount}}</h2>
+      <button [disabled]="!isenabled" class="regsiter mt-2" (click)="pay()">{{"Pay" | translate}}</button></ion-item>
+</ion-content>
+
+  

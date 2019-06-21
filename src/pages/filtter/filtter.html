@@ -1,0 +1,63 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title style="text-align: center;">Filter</ion-title>
+    <ion-buttons style="visibility: hidden;" end>
+      <button (click)="notify()" ion-button icon-only>
+      <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+      </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  
+        <accordian [iconname]="icon1" [title]='name1'>
+        
+        
+         <ion-list>
+           <ion-item *ngFor="let location of locations">
+              <ion-label>{{location.value}}</ion-label>
+          <ion-checkbox (click)="locat(location.value)" [(ngModel)]="location.value.checked" color="secondary"></ion-checkbox>
+        </ion-item>
+        </ion-list> 
+        
+        </accordian>
+        <accordian [iconname]="icon2" [title]='name2'>
+
+          <!-- <ion-item>
+            <ion-range min="0" max="500" [(ngModel)]="rang"  color="secondary">
+                <ion-icon small range-left name="pricetag"></ion-icon>
+                <ion-icon range-right name="pricetags"></ion-icon>
+            </ion-range>
+          </ion-item>
+          Price Rage :{{min}} to {{rang}} AED -->
+          <ion-list radio-group>
+              <ion-item *ngFor="let cost of costs" style="width: 130px;">
+                <ion-label>{{cost.value}}</ion-label>
+                <ion-radio (click)="cots(cost.value)" value="{{cost.value}}"></ion-radio>
+              </ion-item>
+              
+            </ion-list>
+        </accordian>
+        <accordian [iconname]="icon3" [title]='name3'>
+        
+          <ion-list radio-group>
+            <ion-item *ngFor="let rating of ratings" style="width: 130px;">
+              <ion-label>{{rating.value}} Star</ion-label>
+              <ion-radio (click)="rate(rating.value)" value="{{rating.value}}"></ion-radio>
+            </ion-item>
+            
+          </ion-list>
+        
+        
+        </accordian>
+    
+        
+</ion-content>
+<ion-footer>
+    <button class="regsiter mt-2" (click)="apply()">Apply</button>   
+</ion-footer>

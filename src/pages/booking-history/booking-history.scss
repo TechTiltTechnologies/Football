@@ -1,0 +1,108 @@
+page-booking-history {
+    
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #ffffff;
+    }
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #ffffff;
+        background-color: transparent;
+    }
+    .header-md::after,
+    .tabs-md[tabsPlacement="top"] > .tabbar::after,
+    .footer-md::before,
+    .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+      left: 0;
+      bottom: -5px;
+      background-position: left 0 top -2px;
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background-image: none;
+    //  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMUCS0gBIh/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+      background-repeat: repeat-x;
+      content: "";
+    }
+    .toolbar-background-md {
+        border-color: #b2b2b2;
+        background-image: linear-gradient(to right, #114090, #132866);
+        border-bottom-right-radius: 14%;
+        border-bottom-left-radius: 14%;
+    }
+
+    //slides
+    .segment-md .segment-button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 0;
+        height: 4.2rem;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 4rem;
+        text-transform: uppercase;
+        color: #2A2C43;
+        background-color: transparent;
+        opacity: 0.7;
+        -webkit-transition: 100ms all linear;
+        transition: 100ms all linear;
+        padding: 0% 0px;
+    }
+    ion-slides {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .SwipedTabs-tabs ion-segment-button .SwipedTabs-activeTab
+    {
+          color:black !important;
+    }
+   .SwipedTabs-tabs ion-segment-button {
+      border: none !important;
+      color: black !important;
+      background-color: white !important;
+  }
+    .SwipedTabs-tabs
+    {
+        border-bottom:solid 1px #e6e6e6 !important;
+    }
+    ion-segment-button.segment-button.SwipedTabs-activeTab {
+        color: #153376 !important;
+        border-bottom: solid 2px #153376 !important;
+        opacity: 1;
+    }
+  //slides end
+  ion-card {
+    border-radius: 10px!important;
+  padding: 6px;
+  }
+  .transparent{
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    position: relative;
+    outline: none;
+    padding-top: 6%
+    
+    }
+  .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: #ffffff;
+    background-color: transparent;
+}
+.bgback {
+    background-image:  url("../assets/imgs/background.png");
+    background-repeat: repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+}
+
+
+}

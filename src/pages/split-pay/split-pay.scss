@@ -1,0 +1,261 @@
+page-split-pay {
+
+    .toolbar-background-md {
+        border-color: #b2b2b2;
+        background: #132a6b;
+    }
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #ffffff;
+        text-align: center;
+    }
+    .card-background-page {
+    
+        ion-card {
+          position: relative;
+          text-align: center;
+        }
+      
+        .card-title {
+            position: fixed;
+            top: 1%;
+            -webkit-box-shadow: #000 2px 2px 18px -2px;
+            box-shadow: #000 2px 2px 18px -2px;
+            left: 9%;
+            background-color: #fff;
+            width: 100px;
+            border-radius: 50%;
+            height: 100px;
+        }
+
+        .acard-title {
+            position: fixed;
+            top: 1%;
+            -webkit-box-shadow: #000 2px 2px 18px -2px;
+            box-shadow: #000 2px 2px 18px -2px;
+            right: 8%;
+            background-color: #fff;
+            width: 100px;
+            border-radius: 50%;
+            height: 100px;
+        }
+        .areacontent {
+        font-size: 1.0em;
+        // position: absolute;
+        top: 20%;
+        left: 4%;
+        right: 3%;
+        border-radius: 9px;
+        padding: 20px;
+        width: 100%;
+        color: #fff;
+        background-color: white;
+        height: auto;
+        width: auto;
+        -webkit-box-shadow: #000 2px 2px 10px -2px;
+        box-shadow: #00000063 4px 5px 16px -2px;
+        margin-bottom: 20px;
+          }
+
+          .aareacontent {
+            font-size: 1.0em;
+            // position: absolute;
+            top: 20%;
+            left: 4%;
+            right: 3%;
+            border-radius: 9px;
+            padding: 20px;
+            width: 100%;
+            margin-right: 28px;
+            margin-left: -23px;
+            color: #fff;
+            background-color: white;
+            height: auto;
+            width: auto;
+            -webkit-box-shadow: #000 2px 2px 10px -2px;
+            box-shadow: #00000063 4px 5px 16px -2px;
+            margin-bottom: 20px;
+              }
+      
+        .card-md h1 {
+            margin: 40px 0 2px;
+            font-size: 1.3rem;
+            font-weight: normal;
+            color: #222;
+        }
+        .card-md h2 {
+            margin: 5px 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #132a6b;
+        }
+        .text-input-md {
+            margin: 0px 0px;
+            padding: 0px 0px;
+            border-bottom: solid 1px #b1b0b0;
+            width: calc(100% - 3px - 8px);
+            font-size: 13px;
+        }
+    
+        .select-md {
+            padding: 8px 140px 7px 8px;
+            border-bottom: solid #ccc 2px
+        }
+        ion-select {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            overflow: hidden;
+            max-width: 100%;
+        }
+       .list-md .item-input:last-child {
+        border-bottom: 1px solid #dedede00;
+    }
+    .button-md-primary {
+        color: #fff;
+        background-color: #132a6b;
+        padding: 10px 50px 8px 50px;
+        margin-top: 30px;
+        border-radius: 5px;
+    }
+      
+    }
+      .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #ffffff;
+        background-color: transparent;
+    }
+    ion-card img {
+        display: block;
+        width: 100%;
+    }
+    ion-card.card.card-md {
+        padding-top: 30px;
+    }
+    .card-md {
+        margin: 10px;
+        border-radius: 2px;
+        width: calc(100% - 20px);
+        font-size: 1.4rem;
+        background: #fff;
+        -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0), 0 3px 1px -2px rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0, 0, 0, 0);
+    }
+    .item-block{
+        min-height: 0rem;
+    }
+    .select-md .select-icon {
+        position: relative;
+        width: 12px;
+        height: 19px;
+        display: none;
+    }
+    .select-text {
+        overflow: hidden;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        font-size: 13px;
+        min-width: 16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .scroll-content{
+        padding:0!important;
+    }
+
+    .searchbar-md .searchbar-clear-icon {
+        visibility: hidden;
+        right: 13px;
+        top: 0;
+    }
+
+    .example-center {
+        text-align: center;
+        font-size: 12px !important;
+    font-weight: 600 !important;
+      }
+      .fab-md-team-create{
+        background: url(../assets/imgs/create_team.png);
+        background-size: cover;
+        background-size: contain;
+        background-position: center;
+        width: 25px;
+        background-repeat: no-repeat;
+      }
+
+      .fab-md-team-createe{
+        background: url(../assets/imgs/close_icon.png);
+        background-size: cover;
+        background-size: contain;
+        background-position: center;
+        width: 25px;
+        margin-left: 44px;
+        background-repeat: no-repeat;
+      }
+
+      .fab-md-team-acreatee{
+        background: url(../assets/imgs/close_icon.png);
+        background-size: cover;
+        background-size: contain;
+        background-position: center;
+        width: 25px;
+        margin-right: 44px;
+        background-repeat: no-repeat;
+      }
+      .split_more{
+        position: relative;
+        bottom: 36px;
+        color: #000;
+        left: 14px;
+      }
+
+      .aremoveicon{
+          margin-right:40px !important;
+      }
+
+      .asplit_more{
+        position: relative;
+        bottom: 36px;
+        color: #000;
+        right: 34px;
+      }
+
+      .remove{
+        position: relative;
+        bottom: 36px;
+        color: #000;
+        float: right;
+        margin-right: 2px;
+      }
+
+      .aremove{
+        position: relative;
+        bottom: 36px;
+        color: #000;
+        float: left;
+        margin-left: 20px;
+      }
+
+      .fab-md{
+          box-shadow: none!important;
+      }
+     .split_wrapper{
+        position: relative;
+        bottom: 134px;
+        left: 16px;
+        width: 92%;
+     }
+     .playername{
+
+        margin-top: 13px;
+    margin-right: 12px;
+    width: 114%;
+    padding: 0;
+    bottom: -10px;
+    left: -41px;
+     }
+}

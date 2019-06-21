@@ -1,0 +1,48 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Rating</ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+    <p style="text-align: center;font-weight: bolder;color:#0f2a6f;font-size: x-large;">{{ground.ground_name}}</p>
+  </div>
+  <p class="give">Give Your Rating:</p>
+  <ion-row>
+    <ion-col col-2>
+
+    </ion-col>
+    <ion-col col-8>
+ <div style="margin-left: 14%;">
+        <ionic3-star-rating
+                                    activeIcon = "ios-star"
+                                    defaultIcon = "ios-star-outline"
+                                    activeColor = "rgb(255, 220, 29)" 
+                                    defaultColor = "gold"
+                                    readonly="false"
+                                    rating="{{rating}}">
+                                    </ionic3-star-rating>
+                                  </div>
+    </ion-col>
+    <ion-col col-2>
+
+    </ion-col>
+  </ion-row>
+  <div>
+    <p style="text-align: center;
+    font-size: 31px;">
+      {{rating}} - <span style="color:#0f2a6f">Star</span>
+    </p>
+  </div>
+  <ion-item style="margin-top: 30%;">
+      <ion-textarea [(ngModel)]="comments" class="comments"  placeholder="Comments..."></ion-textarea>
+    </ion-item>
+  
+    <button class="submit" (click)="ratingg()">Submit</button>
+</ion-content>

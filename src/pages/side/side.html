@@ -1,0 +1,73 @@
+<ion-menu [content]="content">
+  <ion-header style="font-style: italic">
+     <img style="height: 92px;
+     width: 100%" src="../assets/imgs/register_bg.png">
+
+<p *ngIf="name" style="margin-top: 15%;
+font-family: cursive;
+font-weight: 500;
+font-size: 25px;
+text-align: center;
+color: #000;">{{name | translate}}</p> 
+  </ion-header>
+
+  <ion-content class="team-bg" style="font-style: italic" style="margin-top: 6%;">
+  <ion-list  no-lines>
+      <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" ion-item menuClose (click)="home()">
+          <ion-icon item-start ios="ios-home-outline" md="md-home" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+         {{"Home" | translate}} 
+        </button>
+        <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" (click)="profile()" ion-item menuClose>
+            <ion-icon item-start ios="ios-person-outline" md="md-person" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+            {{"Profile" | translate}}  
+       </button>
+       <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" (click)="booking()" ion-item menuClose>
+        <ion-icon item-start ios="ios-clipboard-outline" md="md-clipboard" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+        {{"Booking History" | translate}}  
+   </button>
+   <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" (click)="myTeam()" ion-item menuClose>
+    <ion-icon item-start ios="ios-people-outline" md="md-people" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+    {{"My Team" | translate}}
+     </button>
+       <!-- <button ion-item menuClose>
+          <ion-icon item-start ios="ios-heart-outline" md="md-heart" [color]="isActive()" style="color:#a94c4c;"></ion-icon>
+          Favorite
+       </button> -->
+       <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" (click)="notify()" ion-item menuClose>
+          <ion-icon item-start ios="ios-notifications-outline" md="md-notifications" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+          {{"Notification" | translate}}
+       </button>
+
+       <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" (click)="invite()" ion-item menuClose>
+        <ion-icon item-start ios="ios-person-add-outline" md="md-person-add" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+        {{"Invite Friends" | translate}}
+     </button>
+
+     <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" (click)="language()" ion-item menuClose>
+      <ion-icon item-start ios="ios-settings-outline" md="md-settings" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+      {{"Language Settings" | translate}}
+   </button>
+
+       <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" (click)="terms()" ion-item menuClose>
+          <ion-icon item-start ios="ios-clipboard-outline" md="md-clipboard" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+          {{"Terms & Conditions" | translate}}  
+       </button>
+       <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" (click)="faq()" ion-item menuClose>
+          <ion-icon item-start ios="ios-information-circle-outline" md="md-information-circle" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+          {{"FAQ" | translate}}  
+       </button>
+       <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" (click)="about()" ion-item menuClose>
+          <ion-icon item-start ios="ios-football-outline" md="md-football" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+          {{"About" | translate}} 
+       </button>
+       <button style="background-color: rgba(255, 255, 255, 0);font-style: italic" ion-item menuClose (click)="Logout()">
+          <ion-icon item-start ios="ios-log-out-outline" md="md-log-out" [color]="isActive()" style="color:#2b3568;"></ion-icon>
+          {{"Logout" | translate}}  
+       </button>
+  
+  
+  </ion-list>
+  </ion-content>
+  </ion-menu>
+  
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

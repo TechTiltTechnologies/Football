@@ -1,0 +1,67 @@
+<ion-header style="font-style: italic">
+
+  <ion-navbar>
+    <ion-title style="text-align: center;">Edit Profile</ion-title>
+    <ion-buttons style="visibility: hidden;" end>
+        <button  ion-button icon-only>
+        <ion-icon (click)="notify()" style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="card-background-page">
+   <ion-card *ngIf="!picture" style="background: rgba(255, 255, 255, 0.05);box-shadow: none">
+      <img (click)="getImage()" [src]="profievalue.player_image_url"/>
+      <!-- <div class="card-title">
+        <ion-avatar (click)="getImage()">
+          <img  style="border-radius: 50%;" [src]="profievalue.player_image_url" class="profile">
+        </ion-avatar>
+  </div> -->
+   </ion-card> 
+
+   <ion-card *ngIf="picture" style="background: rgba(255, 255, 255, 0.05);box-shadow: none">
+    <img (click)="getImage()" [src]="this.picture"/>
+    <!-- <div class="card-title">
+      <ion-avatar (click)="getImage()">
+        <img  style="border-radius: 50%;" [src]="picture" class="profile">
+      </ion-avatar>
+</div> -->
+ </ion-card> 
+ <div *ngIf="profile_image">
+  <button style="margin-left:27% " (click)="uploadImage()" class=button2 ion-button>Done</button>
+</div>
+    <ion-card class="card1">
+
+        <ion-item style="margin-top: 11%;background-color: rgba(255, 255, 255, 0);">
+            <ion-icon style="color:#102f79" item-left name="person" item-right></ion-icon>
+          <ion-input style="background: rgba(255, 255, 255, 0.05);" #pname type="text" value="{{ profievalue.player_fname }}" class="ply-prof-dtls"></ion-input>
+        </ion-item>
+        <ion-item style="margin-top: 4%;background-color: rgba(255, 255, 255, 0);">
+            <ion-icon style="color:#102f79" item-left name="mail" item-right></ion-icon>
+          <ion-input style="background: rgba(255, 255, 255, 0.05);" #pemail type="email" value="{{ profievalue.player_email }}" class="ply-prof-dtls"></ion-input>
+        </ion-item>
+        <ion-item style="margin-top: 4%;background-color: rgba(255, 255, 255, 0);">
+            <ion-icon style="color:#102f79" item-left name="phone-portrait" item-right></ion-icon>
+            <ion-input style="background: rgba(255, 255, 255, 0.05);" #pnumber type="number" value="{{ profievalue.player_mnumber }}" class="ply-prof-dtls"></ion-input>
+          </ion-item>
+          <!-- <ion-item style="margin-top: 4%;background-color: rgba(255, 255, 255, 0);">
+              <ion-icon style="color:#102f79" item-left name="pulse" item-right></ion-icon>
+              <ion-input style="background: rgba(255, 255, 255, 0.05);" placeholder="Enter a age" #age type="number"  class="ply-prof-dtls"></ion-input>
+            </ion-item>
+            <ion-item style="margin-top: 4%;background-color: rgba(255, 255, 255, 0);">
+                <ion-icon style="color:#102f79" item-left name="pin" item-right></ion-icon>
+                <ion-input style="background: rgba(255, 255, 255, 0.05);" placeholder="Enter a City" #city type="text"  class="ply-prof-dtls"></ion-input>
+              </ion-item> -->
+        
+      <div >
+          <button (click)="update()" class=button2 ion-button> Update</button>
+        </div>
+
+     
+
+
+    </ion-card>
+    
+  </ion-content>

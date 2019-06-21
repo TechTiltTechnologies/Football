@@ -1,0 +1,70 @@
+<ion-content style="font-style: italic" class="backgr">
+
+    <div style="padding-top: 3%;">
+          
+             <ion-icon style="padding-left: 5%" ios="ios-arrow-round-back" md="md-arrow-round-back" (click)="goback()"></ion-icon>
+          </div> 
+         
+    <div style="margin-left: 15%;margin-top: 24%;font-weight: 600;font-size: 17px;">   
+       <p style="font-size: 20px;">
+        CREATE A NEW ACCOUNT
+      </p>
+    </div>
+
+        <ion-list style="margin-top: -35%;">
+
+        <div  style="color:white; margin-left:10%;width:80%;margin-top: 43%;">
+            <ion-item style="background: rgba(249, 150, 155, 0.81);border: none;position: relative;  outline: none;  height: 30p;color: #423c3e;">
+                <ion-input style="font-size:14px;" type="text" value="" name="fname" #fname placeholder="First Name"></ion-input>
+                  </ion-item>
+          
+        </div>
+    
+        <div style="color:white;margin-left:10%;width:80%" >
+            <ion-item style="background: rgba(249, 150, 155, 0.81);border: none;position: relative;  outline: none;  height: 30p;color: #423c3e;">
+                <ion-input style="font-size:14px;" type="text" name="lname" #lname placeholder="Last Name"></ion-input>
+                  </ion-item>
+         
+        </div>
+        </ion-list>
+        <ion-list style="margin-top: -40%;">
+
+            <div  style="color:white; margin-left:10%;width:80%;margin-top: 43%;">
+                <ion-item style="background: rgba(249, 150, 155,0.81);border: none;position: relative;  outline: none;  height: 30p;color: #423c3e;">
+                    <ion-input type="text" style="font-size:14px;" name="email" #email value="" placeholder="Your Email Address"></ion-input>
+                      </ion-item>
+             
+             
+            </div>
+        
+            <div style="color:white;margin-left:10%;width:80%" >
+                <ion-item style="background: rgba(249, 150, 155, 0.81);border: none;position: relative;  outline: none;  height: 30p;color: #423c3e;">
+             <ion-input  type="Number" style="font-size:14px;" name="mobile" #mobile placeholder="Your Phone Number"></ion-input>
+               </ion-item>
+            </div>
+            </ion-list>
+            <ion-list style="margin-top: -40%;">
+
+                <div  style="color:white; margin-left:10%;width:80%;margin-top: 43%;">
+                  <ion-item style="background: rgba(249, 150, 155, 0.81);border: none;position: relative;  outline: none;  height: 30p;color: #423c3e;">
+                  <ion-input type="PassWord" style="font-size:14px;" name="password" #password value="" placeholder="Password"></ion-input>
+                  <ion-icon style="color:white" name="ios-eye" item-right></ion-icon>
+                </ion-item>
+                </div>
+                </ion-list>
+
+                <ion-list>
+                    <div style="margin-top:5%;margin-left: 25%;">
+                        <button style="width:105%;margin-left:-19%;background-color:black;color:#ffff;font-size: 18px;
+                        letter-spacing: 1px;
+                        font-weight: 700;" ion-button color="#fcb8bb" (click)="register()">SIGN UP</button>
+                      </div>
+                </ion-list>
+
+
+                <ion-list style="margin-top: 20%;margin-left: 16%;">
+
+                  <a href="#" style="color:black;font-weight: 600;letter-spacing: 0.5px;" (click)="Login()">Already have an account? Login</a>
+                </ion-list>
+
+</ion-content>

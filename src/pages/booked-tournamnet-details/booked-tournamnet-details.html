@@ -1,0 +1,130 @@
+<ion-header style="font-style: italic">
+
+  <ion-navbar>
+      <ion-title style="text-align: center;"> {{details.tour_name}}
+          </ion-title>
+          <ion-buttons style="visibility: hidden;" end>
+              <button (click)="notify()" ion-button icon-only>
+              <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+              </button>
+              </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="font-style: italic">
+
+      <div style="height: 32%;width: 100%;padding-top: 0%;text-align: left;position: initial;">
+              <ion-slides  pager="true" autoplay="2000" loop="true" speed="2000" effect="fade">
+                  <ion-slide class="slide-background swiper-no-swiping" [ngStyle]="{'background-image': 'url(' + details.tour_banner_url +')'}">
+                              <img [src]="details.tour_banner_url">   
+                  </ion-slide>
+                </ion-slides>
+          </div>
+
+          <p style="color: #10286b;
+          text-align: center;
+          font-size: initial;
+          font-weight: bolder;">Match Schedules</p>
+
+          <ion-list no-lines>
+              <ion-grid>
+                  <button ion-button class="slots">Time Allocations</button>
+                  <ion-list no-lines class="upmatches">
+
+                      <ion-item *ngFor="let schedule of schedules;let i= index" (click)="detail(i,schedule)">
+    
+                       <ion-row>
+                              <ion-col col=2>
+                                <p style="margin-left: 5%">{{schedule.team1}}</p>
+                              </ion-col>
+    
+                              <ion-col col=2 style="margin-left: 5%;
+                              bottom: 4px;">
+                                 <img [src]="schedule.team_logo1_url"/>
+                              </ion-col>
+    
+                              <ion-col col=3>
+                                   <button style="background: #0f296e;
+                                   color: white;
+                                   width: 127%;
+                                   margin-left: 15%;">{{schedule.time}}</button>
+                                  </ion-col>
+    
+                             <ion-col col=2 style="margin-left: 10%;
+                             bottom: 4px;">
+                                  <img [src]="schedule.team_logo2_url"/>
+                                </ion-col>
+    
+                              <ion-col col=2 >
+    
+                                      <p style="margin-left: 45%;">{{schedule.team2}}</p>
+                              </ion-col>
+    
+                              <ion-col col=1>
+    
+                                <img src="../assets/imgs/arrow.png" style="width: 30%;
+                                height: 30%;margin-left: 68%" >
+                              </ion-col>
+    
+                          </ion-row>
+                      </ion-item>
+                  </ion-list>
+              </ion-grid>
+              <!-- <ion-item style="padding:0%;margin: 0px">
+
+                 <div class="example-center">
+                              <button style="color: #ffffff;
+                              background-color: #0f286c;" ion-button>Time Allocations
+                              </button>
+                            </div> 
+              </ion-item> --> 
+          </ion-list>
+
+          <ion-list>
+         
+              <ion-grid>
+                  <button ion-button class="slots">Points Table</button>
+          <table>
+            <tr style="background: #f6eded;font-size: 13px">
+              <th>POS</th>
+              <th>TEAM</th>
+              <th>MP</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>GD</th>
+              <th>Total</th>
+            </tr>
+
+            <tr *ngFor="let result of results" style="font-size:12px"> 
+              <td>{{result.id}}</td>
+              <td><img src="../assets/imgs/logosmall.png" style="width:21px"/>
+              <span class=spanpos> {{result.team_id}}</span></td>
+              <td>{{result.points}}</td>
+              <td>{{result.wins}}</td>
+              <td>0</td>
+              <td>{{result.loss}}</td>
+              <td>{{result.goals_differences}}</td>
+              <td>{{result.goals_scored}}</td>
+            </tr>
+            
+            <tr *ngIf="table" style="font-size:12px">
+                <td>0</td>
+                <td><img src="../assets/imgs/logosmall.png" style="width:21px"/>
+              </td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr> 
+          </table>
+</ion-grid>
+       
+       
+      </ion-list>
+</ion-content>
+

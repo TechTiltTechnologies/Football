@@ -1,0 +1,50 @@
+
+<ion-header style="font-style:italic">
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+          </button>
+    <ion-title style="text-align: center;">Team</ion-title>
+    <ion-buttons style="visibility: hidden;" end>
+        <button (click)="notify()" ion-button icon-only>
+        <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+    <ion-content style="font-style:italic" class="team-bg">
+        <ion-grid>
+          <ion-row justify-content-center align-items-center>
+            <ion-fab>
+              <ion-row>
+                  <!-- <ion-col>
+                      <button (click)="cteam()" ion-fab fab-fixed color="team-create" ></button>
+                      <h6 class="join-title">Create a Team</h6>
+                    </ion-col> -->
+                <ion-col *ngIf = "createteam">
+                  <button (click)="cteam()" ion-fab fab-fixed color="team-create" ></button>
+                  <h6 class="join-title">Create a Team</h6>
+                </ion-col>
+                <ion-col *ngIf = "my_team">
+                    <button (click)="myteam()" ion-fab fab-fixed color="my-team" ></button>
+                    <h6 class="join-title">My Team</h6>
+                  </ion-col>
+                <ion-col>
+                  <button (click)="join()" ion-fab fab-fixed color="join_frdly"></button>
+                  <h6 class="join-title">Join Another Team</h6>
+                </ion-col>
+
+                <ion-col>
+                  <button (click)="browseteam()" ion-fab fab-fixed color="browse_team"></button>
+                  <h6 class="join-title">Browse Team</h6>
+                </ion-col>
+
+              </ion-row>
+            </ion-fab>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+

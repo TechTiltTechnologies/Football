@@ -1,0 +1,12 @@
+<ion-content style="font-style: italic;">
+  <ion-slides pager="true" class="reg_bg">
+    <ion-slide *ngFor="let slide of slider">
+        <h2 [innerHTML]="slide.heading"></h2>
+       <img [src]="slide.image"/>
+      <h2 [innerHTML]="slide.title"></h2>
+      <p [innerHTML]="slide.description"></p>
+    </ion-slide>
+  </ion-slides>
+  <button class="regsiter mt-2" (click)="register()">Register Now</button>
+  <p class="pa">Already have an account? <span class="log" (click)="login()">SIGN IN</span></p>
+  </ion-content>

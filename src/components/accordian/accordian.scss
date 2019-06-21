@@ -1,0 +1,26 @@
+
+    accordian {
+        .card-header{
+            background-color:white;
+            color:black;
+        }
+        .card-content{
+            max-height:0px;
+            padding: 0px 16px;
+        }
+        .item-md-primary, .item-divider-md-primary {
+            color:black;
+            background-color:white;
+        }
+        b, strong {
+            font-weight: bold;
+            font-size: large;
+            
+        }
+        .card-header-md {
+            font-size: 1.6rem;
+            color: #222;
+            padding: 0px; 
+        }
+    }
+

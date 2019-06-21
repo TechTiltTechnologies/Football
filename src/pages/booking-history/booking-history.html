@@ -1,0 +1,174 @@
+ 
+<ion-header style="font-style: italic">
+
+  <ion-navbar hideBackButton="true">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+          </button>
+    <ion-title style="text-align: center;">My Bookings</ion-title>
+    <ion-buttons style="visibility: hidden;" end>
+        <button (click)="notify()" ion-button icon-only>
+        <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="font-style: italic">
+
+    <ion-segment class="SwipedTabs-tabs">
+        <ion-segment-button *ngFor = 'let tab of tabs ; let i = index ' value = "IgnoreMe"(click)="selectTab(i)" 
+        [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider && ( this.SwipedTabsSlider.getActiveIndex() === i || (
+      tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }'>
+       {{tab}}  
+        </ion-segment-button>
+      </ion-segment>
+     
+      <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%' : (100/this.tabs.length)}"></div>
+    <ion-slides #SwipedTabsSlider (ionSlideDrag) ="animateIndicator($event)"
+    (ionSlideWillChange) = "updateIndicatiorPosition()"
+    (ionSLideLoadChange)="updateIndicatiorPosition()"
+    (pan) = "updateIndicatiorPosition()"
+    [pager] = "false">
+      <ion-slide>
+            <ion-card *ngFor="let utournament of utournaments;let i= index" (click)="detail(i,utournament)" class="radius">
+                <ion-item class="transparent">
+                      <!-- <ion-avatar item-start style="border: 2px solid #153376;
+                      background: transparent;
+                      border-radius: 73%;
+                      color: #153376">
+                        <img style=" border-radius: 50%;
+                        overflow: hidden;
+                        width: 60px;
+                        height: 60px" [src] = utournament.tournament_banner_url>
+                      </ion-avatar > -->
+                      <div style="margin-left: 4%;">
+                      <p style="font-size: 17px;font-weight: 600;padding-bottom: 7px;color: #153376;font-style: italic;font-weight: 600">{{utournament.tour_name}}</p>
+                      <p style="font-size: 12px;padding-bottom: 7px;color:#00bcd4;font-style: italic;font-weight: 600"><ion-icon name="pin"></ion-icon> {{utournament.tour_address}}</p>
+      
+                      <p style="font-size: 12px;padding-bottom: 7px;color: #000;font-style: italic;font-weight: 600"> Max {{utournament.tour_teamlimit}} Team Allowed</p>
+      
+                      <p style="font-size: 12px;padding-bottom: 7px;color: #000;font-style: italic;font-weight: 600"><ion-icon name="calendar"></ion-icon> {{utournament.tour_startdate}} - <ion-icon name="calendar"></ion-icon>{{utournament.tour_startdate}}</p>
+                     </div>     
+                    </ion-item>
+            </ion-card>
+           
+            <ion-card *ngFor="let ground of grounds;let i= index"  class="radius">
+                <ion-item (click)="gbooking(ground,i)" class="transparent">
+                      <!-- <ion-avatar item-start style="border: 2px solid #153376;
+                      background: transparent;
+                      border-radius: 73%;
+                      color: #153376">
+                        <img style=" border-radius: 50%;
+                        overflow: hidden;
+                        width: 60px;
+                        height: 60px" [src] = >
+                      </ion-avatar > -->
+                      <div style="margin-left: 4%;">
+                      <p style="font-size: 17px;font-weight: 600;padding-bottom: 7px;color: #153376;font-style: italic;font-weight: 600"> {{ground.ground_name}}</p>
+                      <p style="font-size: 12px;padding-bottom: 7px;color:#00bcd4;font-style: italic;font-weight: 600">  <ion-icon name="bookmark"></ion-icon>{{ground.booking_code}}</p>
+      
+                      <!-- <p style="font-size: 12px;padding-bottom: 7px;color: #000;font-style: italic;font-weight: 600"> Max {{utournament.tour_teamlimit}} Team Allowed</p> -->
+      
+                      <p style="font-size: 12px;padding-bottom: 7px;color: #000;font-style: italic;font-weight: 600">  <ion-icon name="calendar"></ion-icon> {{ground.booking_sdate}} - <ion-icon name="clock"></ion-icon>{{ground.booking_time}}</p>
+                     </div>     
+                    </ion-item>
+
+                    <button style = "background-color: #E84538;
+                    float: right;
+                    padding: 7px;
+                    margin-right: 10px;
+                    color: white;
+                    margin-bottom: 10px;" (click) = "cancelbooking(ground,i)">Cancel</button>
+            </ion-card>
+
+
+            <!-- <ion-card (click)="gbooking(ground,i)" *ngFor="let ground of grounds;let i= index">
+              <ion-card-title style="border-bottom: 1px solid #122a6b;">
+               {{ground.ground_name}}
+              </ion-card-title>
+              <ion-card-content>
+                <ion-row style="text-align: left;">
+                  <ion-col style="font-weight: bolder;color: darkgray;" col-6>
+                    <ion-icon name="bookmark"></ion-icon>
+                    Booking Code
+                  </ion-col>
+                  <ion-col style="font-weight: 500;" col-6>
+                    {{ground.booking_code}}
+                    </ion-col>
+                </ion-row>
+                <ion-row style="text-align: left;">
+                    <ion-col style="font-weight: bolder;color: darkgray;" col-6>
+                        <ion-icon name="calendar"></ion-icon>
+                     Date
+                    </ion-col>
+                    <ion-col style="font-weight: 500;"  col-6>
+                        {{ground.booking_sdate}}
+                      </ion-col>
+                  </ion-row>
+                  <ion-row style="text-align: left;">
+                      <ion-col style="font-weight: bolder;color: darkgray;" col-6>
+                          <ion-icon name="clock"></ion-icon>
+                       Time Slot
+                      </ion-col>
+                      <ion-col style="font-weight: 500;"  col-6>
+                          {{ground.booking_time}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row style="text-align: left;">
+                        <ion-col style="font-weight: bolder;color: darkgray;" col-6>
+                            <ion-icon name="cash"></ion-icon>
+                          Amount
+                        </ion-col>
+                        <ion-col style="font-weight: 500;"  col-6>
+                            {{ground.booking_amount}}
+                          </ion-col>
+                      </ion-row>
+                      <ion-row style="text-align: left;">
+                          <ion-col style="font-weight: bolder;color: darkgray;" col-6>
+                              <ion-icon name="paper"></ion-icon>
+                           Payment Type
+                          </ion-col>
+                          <ion-col style="font-weight: 500;"  col-6>
+                              {{ground.booking_paymenttype}}
+                            </ion-col>
+                        </ion-row>
+              </ion-card-content>
+            </ion-card> -->
+            <div *ngIf="this.uempty && this.gempty">
+              <p style="margin-top: 50%;
+              font-size: large;">You don't have any bookings yet</p>
+            </div>
+        
+        </ion-slide>
+      <ion-slide>
+          <ion-card *ngFor="let ptournament of ptournaments;let i= index" (click)="detail(i,ptournament)" class="radius">
+              <ion-item class="transparent">
+                    <ion-avatar item-start style="border: 2px solid #153376;
+                    background: transparent;
+                    border-radius: 73%;
+                    color: #153376">
+                      <img style=" border-radius: 50%;
+                      overflow: hidden;
+                      width: 60px;
+                      height: 60px" [src] = ptournament.tournament_banner_url>
+                    </ion-avatar >
+                    <div style="margin-left: 4%;">
+                    <p style="font-size: 17px;font-weight: 600;padding-bottom: 7px;color: #153376;font-style: italic;font-weight: 600">{{ptournament.tour_name}}</p>
+                    <p style="font-size: 12px;padding-bottom: 7px;color:#00bcd4;font-style: italic;font-weight: 600"> {{ptournament.tour_address}}</p>
+    
+                    <p style="font-size: 12px;padding-bottom: 7px;color: #000;font-style: italic;font-weight: 600"> Max {{ptournament.tour_teamlimit}} Team Allowed</p>
+    
+                    <p style="font-size: 12px;padding-bottom: 7px;color: #000;font-style: italic;font-weight: 600"> {{ptournament.tour_startdate}} - {{ptournament.tour_startdate}}</p>
+                   </div>     
+                  </ion-item>
+          </ion-card>
+          <div *ngIf="this.uempty">
+          <p style="margin-top: 50%;
+          font-size: large;">You don't have any bookings yet</p></div>
+      
+      </ion-slide>
+   </ion-slides>
+</ion-content>

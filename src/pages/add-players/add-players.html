@@ -1,0 +1,99 @@
+
+<ion-header style="font-style: italic">
+
+    <ion-navbar>
+        <ion-title style="text-align: center;"> Add Player
+          </ion-title>
+          <ion-buttons style="visibility: hidden;" (click)="notify()" right>
+                <button style="color: white;" ion-button icon-only><ion-icon name="ios-notifications-outline"></ion-icon>
+                </button>
+              </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content style="font-style: italic">
+  
+      <ion-card>
+  
+          <p style="margin-top: 4%;
+          text-align: center;
+          color: #153376;">Select your friends</p>
+        
+        <ion-searchbar
+        [(ngModel)]="searchTerm"
+        [showCancelButton]="shouldShowCancel"
+        (ionInput)="getItems($event)"
+        (ionCancel)="onCancel($event)">
+      </ion-searchbar>
+  
+      <ion-list style="height: 240px;
+      overflow-y: scroll;" no-lines>
+  
+                <ion-item *ngFor="let player of players;let i= index">
+  
+                    <ion-avatar item-start>
+                        <img style=" border-radius: 50%;
+                        overflow: hidden;
+                        width: 40px;
+                        height: 40px" [src]="player.player_image_url">
+                  </ion-avatar > 
+  
+                  <ion-label style="display:inline-block"> 
+                      <p style="color: black">{{player.player_fname}} {{player.player_lname}} ({{player.player_role}})</p>
+                      <p>{{player.player_mnumber}}</p>
+                      <ionic3-star-rating 
+                      activeIcon = "ios-star"
+                      defaultIcon = "ios-star-outline"
+                      activeColor = "rgb(255, 220, 29)" 
+                      defaultColor = "gold"
+                      readonly="true"
+                      rating="{{player.player_ratings}}">
+                      </ionic3-star-rating>
+                    </ion-label>
+  
+                    <ion-checkbox (click)="selectPlayer(player,i)" [(ngModel)]="player.checked" item-right  color="dark" ></ion-checkbox>
+  
+                </ion-item>
+  
+              
+    </ion-list>
+  
+    <div class="example-center">
+        <button (click)="send()" ion-button>SEND REQUEST
+        </button>
+      </div>
+  
+  <div style="display:flex;margin-top: 7%;margin-left: 5%">
+      <hr style="background-color: #3b3b3b;
+      margin-top: 7%;
+      margin-left: 5%;
+      width: 40%;
+      margin: 0">
+  
+     <span style="position: relative;
+     bottom: 7px;
+     margin-left: 5%;
+     color: #153376;
+     font-size: medium;
+     margin-right: 5%;">OR</span>
+  
+  
+     <hr style="background-color: #3b3b3b;
+     margin-top: 5%;
+     margin-left: 5%;
+     width: 40%;
+     margin: 0">
+    </div>
+  
+    <div class="example-center">
+        <button (click)="share()" class=button1 ion-button>INVITE FRIENDS
+        </button>
+      </div>
+         
+     
+    </ion-card>
+  
+  </ion-content>
+  

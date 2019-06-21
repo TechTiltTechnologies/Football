@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ "Settings" | translate }}</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list radio-group>
+        <ion-list-header>
+          Language
+        </ion-list-header>
+      
+        <ion-item>
+          <ion-label>English</ion-label>
+          <ion-radio (click) = "changeLanguage('en')"[checked]="isChecked" value="en"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Arabic</ion-label>
+          <ion-radio (click) = "changeLanguage('ar')" [checked]="isCheckedd"value="ar"></ion-radio>
+        </ion-item>
+
+      </ion-list>
+
+</ion-content>

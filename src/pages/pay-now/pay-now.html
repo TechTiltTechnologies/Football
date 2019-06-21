@@ -1,0 +1,110 @@
+<ion-header style="font-style: italic">
+  <ion-navbar>
+    <ion-title style="text-align: center;">{{"Payment" | translate}}</ion-title>
+    <ion-buttons style="visibility: hidden;" end>
+        <button (click)="notify()" ion-button icon-only>
+        <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="font-style: italic" padding>
+  <h2 class="head">{{"Summary" | translate}}</h2>
+  <ion-card>   
+          <ion-item >
+              <button ion-button clear item-start class="txt">{{"Ground:" | translate}}</button>
+              <button ion-button clear item-end class="txtp">{{details.ground_name}}<br>{{details.ground_city}} ({{selectSize.size}} - {{selectSize.ground_sq_ft}} sq ft)</button>
+            </ion-item>
+            <ion-item>
+                <button ion-button clear item-start class="txt">{{"Date:" | translate}}</button>
+                <p style="text-align: -webkit-center;
+                font-weight: bolder;" class="txtp">{{bookedDate}}</p>
+              </ion-item>
+              <ion-item>
+                <button ion-button clear item-start class="txt">{{"Time:" | translate}}</button>
+                <p style="text-align: -webkit-center;
+                font-weight: bolder;" class="txtp">{{selecttime}}</p>
+              </ion-item>
+    </ion-card>
+    <h2 class="head">{{"Payment Options" | translate}}</h2>
+    <ion-item>
+        <div id="myDIV">
+        <button ion-button outline item-start  [ngClass]="{'abutto' : clanguage == 'ar'}"(click)="active('card')"    class="butto" [class.selected] = 'card'>{{"By Card" | translate}}</button>
+        <button ion-button outline item-end  [ngClass]="{'abutto' : clanguage == 'ar'}" (click)="active('cash')" class="butto" [class.selected] = 'cash'>{{"By Cash" | translate}}</button>
+    </div>
+    </ion-item>
+    <div>
+        <p (click)="note()" style="margin-left: 4%;"><span style="color: #2b3568;"><ion-icon name="ios-information-circle"></ion-icon></span>{{"Notes" | translate}}</p>
+      </div>
+    <h2 class="head">{{"Payment Type" | translate}}</h2>
+    <ion-item>
+        <button ion-button outline (click)="full('full')" item-start class="buttn">{{"Full Payment" | translate}}</button>
+        <button (click)="split('split')" [disabled]="!isenabled" ion-button outline item-end class="buttn" >{{"Split Payment" | translate}}</button>
+    </ion-item>
+    <div style="margin-top: 7%;" *ngIf="players">
+    <h2 class="head">{{"Player Details" | translate}}</h2>
+    <ion-card>
+            <ion-list no-lines>
+  
+                    <ion-item *ngFor="let player of players;let i = index">
+      
+                        <ion-avatar item-start>
+                            <img style=" border-radius: 50%;
+                            overflow: hidden;
+                            width: 40px;
+                            height: 40px" [src]="player.player_image_url">
+                      </ion-avatar > 
+      
+                      <ion-label style="display:inline-block"> 
+                          <p style="color: black">{{player.player_fname}} {{player.player_lname}} ({{player.player_role}})</p>
+                          <p>{{player.player_team}}</p>
+                        </ion-label>
+      
+                        <ion-checkbox  (click)="selectPlayer(player,i)" [(ngModel)]="player.checked" item-right  color="dark" ></ion-checkbox>
+                       
+                    </ion-item>
+
+                    <div style="margin-top: 5%;">
+                      <button [disabled]="!isenable" (click)="sendsplit()" style="width: 80%;margin-left: 8%;font-weight: bold;font-size: 18px;text-transform: capitalize;" ion-button color="primary">Send</button>
+                      </div>
+                  
+        </ion-list>
+        <!-- <ion-item>
+            <ion-label color="primary" stacked>Card Number</ion-label>
+            <ion-input type="number" placeholder="Enert your card number"></ion-input>
+          </ion-item>
+          <ion-grid>
+              <ion-row>
+                <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+              <ion-label  color="primary" stacked>Expiry Date</ion-label>
+              <ion-input type="text" placeholder="Expiry date"></ion-input>
+           </ion-col>
+           <ion-col col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+            <ion-label color="primary" stacked>CVV </ion-label>
+                <ion-input  type="number" placeholder="Enter CVV"></ion-input>
+              </ion-col>
+                </ion-row>
+                </ion-grid>
+            <ion-item>
+            <ion-label class="text">Set as Default Card</ion-label>
+            <ion-checkbox color="primary"></ion-checkbox>
+          </ion-item> -->
+    </ion-card>
+</div>
+    <ion-item class="items">
+    <p class="txtprice">{{"Total Price" | translate}}</p>
+    <h2 *ngIf="!splitamount" class="head">AED {{this.amount}}</h2>
+    <h2 *ngIf="splitamount" class="head">AED {{splitamount | number : '1.2-2'}}</h2>
+<!-- 
+<input type="number" [(ngModel)]="finalAmount" style="padding-bottom: 10px;">
+<h2 *ngIf="paypalLoad">Paypal button is loading</h2> -->
+
+    <button *ngIf="cash" class="regsiter mt-2" (click)="payHand()">{{"Pay" | translate}}</button>
+    <button *ngIf="!cash" class="regsiter mt-2" (click)="pay()">{{"Pay Now" | translate}}</button>
+
+</ion-item>
+</ion-content>
+<ion-footer style="font-style: italic;">
+        <ion-label style="font-size: 14px;color: #1c315e;text-align: center;"><span (click)="terms()" style="font-weight: bolder;"><u>{{"Cancel Policy / Terms & Conditions" | translate}}</u></span></ion-label>
+</ion-footer>

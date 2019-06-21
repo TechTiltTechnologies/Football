@@ -1,0 +1,330 @@
+.toolbar-background-md {
+    border-color: #b2b2b2;
+    background: #a94c4c;
+}
+
+.SwipedTabs-tabs ion-segment-button
+  {
+      border:none !important;
+      color:gray !important;
+      background-color:white !important;
+  }
+  .SwipedTabs-tabs ion-segment-button .SwipedTabs-activeTab
+  {
+        color:black !important;
+  }
+  .SwipedTabs-tabs
+  {
+      border-bottom:solid 1px #e6e6e6 !important;
+  }
+
+  .toolbar-title-md {
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: #fff;
+}
+.segment-md .segment-button {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 0;
+    height: 4.2rem;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 4rem;
+    text-transform: uppercase;
+    color: #2A2C43;
+    background-color: transparent;
+    opacity: 0.7;
+    -webkit-transition: 100ms all linear;
+    transition: 100ms all linear;
+    padding: 0% 0px;
+}
+ion-slides {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.swiper-pagination-bullet {
+    background-color: #fff;
+  }
+  .no-padding-top .scroll-content{
+      padding-top: 0 !important;
+  }
+  .SwipedTabs-indicatorSegment {
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    transition: 0.3s all;
+    transform-origin: top 0 left 0;
+    height: 1px;
+    position: relative;
+    top: -2px;
+    background-color: #a94c4c !important;
+}
+.tabs-md .tabbar {
+background: #a94c4c;
+}
+.game-info{
+    background: url(../assets/imgs/yourteam_bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 205px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img-cont{
+    width: 75px;
+    height: 75px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #a94c4c;
+    position: absolute;
+    bottom: 13px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.prof-img{
+    margin: 0 auto;
+    display: inherit;
+    padding: 9px 0;
+}
+.game-details{
+    float: right;
+}
+.game-details h2{
+    font-weight: 900;
+    font-size: 23px;
+    text-shadow: 2px 2px 4px #848484;
+}
+.game-icon-img {
+    width: 48px !important;
+    height: 48px !important;
+}
+.game-deets-img-wrap{
+    display: inline-block;
+    text-align: center;
+}
+.game-deets-img-wrap h6{
+    font-size: 9px;
+    color: #a94c4c;
+    font-weight: bold;
+}
+.game-deets-img-wrap h5{
+    font-size: 9px;
+    color: #a94c4c;
+}
+.game-deets-img-wrap span{
+    font-size: 13px;
+    color: #aa4f4e;
+}
+.team-bg{
+    background: url(../assets/imgs/bg_tam.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.team-mem-head{
+    text-align: center;
+    color: #fff;
+    background: #a94c4c;
+    border-radius: 6px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.12), 0 6px 20px 0 rgba(0, 0, 0, 0.14);
+    padding: 10px 0;
+    margin: 5px 0px !important;
+    margin-bottom: 10px !important;
+}
+.team-lst {
+    color: #a94c4c;
+    text-align: left;
+    display: inline-block;
+    margin-left: 7px;
+}
+table{
+    width: 89%;
+    border: 1px solid #a94c4c;
+    margin: 0 auto;
+}
+table tr{
+    border-bottom: 1px solid #a94c4c;
+    // text-align: left;
+}
+.team-lst>span{
+    color: #000;
+}
+.add-plyrs-btn{
+    background: transparent;
+    color: #a94c4c;
+    border: 1px solid #a94c4c;
+    margin: 0 auto;
+    display: inherit;
+}
+td{
+    padding: 5px 5px;
+    text-align: left;
+}
+.teamform-bg{
+    background: url("../assets/imgs/teamform-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+.tshirt1{
+    background: url("../assets/imgs/t-shirt1.png");
+    background-repeat: no-repeat;
+    height: 60%;
+    margin-left: 50%;
+    position: relative;
+}
+.tshirt3{
+    background: url("../assets/imgs/t-shirt2.png");
+    background-repeat: no-repeat;
+    height: 60%;
+    margin-left: 45%;
+    position: relative;
+}
+.inputbg1{
+    background: url("../assets/imgs/inputbg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: 42%;
+    color: #fff;
+    font-size: 12px;
+    position: relative;
+    top: -2px;
+}
+.tshirt2{
+    background: url("../assets/imgs/t-shirt1.png");
+    background-repeat: no-repeat;
+    height: 60%;
+    position: relative;
+  
+}
+.tshirt9{
+    background: url("../assets/imgs/t-shirt1a.png");
+    background-repeat: no-repeat;
+    height: 60%;
+    position: relative;
+  
+}
+.tshirt4{
+    background: url("../assets/imgs/t-shirt2.png");
+    background-repeat: no-repeat;
+    height: 60%; 
+    position: relative;
+  
+}
+.tshirt8{
+    background: url("../assets/imgs/t-shirt2a.png");
+    background-repeat: no-repeat;
+    height: 60%;
+   
+    position: relative;
+  
+}
+.tshirt5{
+    background: url("../assets/imgs/t-shirt3.png");
+    background-repeat: no-repeat;
+    height: 60%;
+   
+    position: relative;
+  
+}
+.tshirt6{
+    background: url("../assets/imgs/t-shirt4.png");
+    background-repeat: no-repeat;
+    height: 60%;
+  
+    position: relative;
+  
+}
+.tshirt7{
+    background: url("../assets/imgs/t-shirt5.png");
+    background-repeat: no-repeat;
+    height: 60%;
+ 
+    position: relative;
+  
+}
+
+.inputbg3{
+    background: url("../assets/imgs/inputbg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #fff;
+    font-size: 12px;
+    position: relative;
+    top: -2px;
+}
+.inputbg2{
+    background: url("../assets/imgs/inputbg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #fff;
+    font-size: 10px;
+    left: 7px;
+    position: relative;
+    top: -2px;
+}
+.button-md:hover:not(.disable-hover) {
+    background-color: #a94c4c;
+    color:#FFF
+}
+.button-6{
+    border: 2px solid #a94c4c;
+    text-align: center;
+    cursor: pointer;
+    padding: 0px 15px;
+    margin-top: 20px 20px;
+    margin: 20px;
+    display: inline-block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.34), 0 6px 20px 0 rgba(0, 0, 0, 0.14);
+  }
+  .button-6 a{
+        font-size: 16px;
+        color: #a94c4c;
+        text-decoration: none;
+        line-height: 40px;
+        -webkit-transition: all .5s ease;
+        transition: all .5s ease;
+        z-index: 2;
+        position: relative;
+  }
+  .eff-6{
+    width:140px;
+    height:50px;
+    right:-140px;
+    bottom:-50px;
+    background:#a94c4c;
+    position:absolute;
+    transition:all .5s ease;
+    z-index:1;
+  }
+  .button-6:hover .eff-6{
+    right:0;bottom:0;
+  }
+  .button-6:hover a{
+    color:#fff;
+  }
+  ion-header {
+    left: 0;
+    top: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.11), 0 6px 20px 0 rgba(0, 0, 0, 0.02);
+    position: absolute;
+    z-index: 10;
+    display: block;
+    width: 100%;
+}
+  

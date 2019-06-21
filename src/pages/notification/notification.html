@@ -1,0 +1,91 @@
+
+<ion-header style="font-style: italic">
+
+  <ion-navbar>
+    <ion-title style="text-align: center;">Notification</ion-title>
+    <ion-buttons style="visibility: hidden;" (click)="notify()" right>
+        <button style="color: white;" ion-button icon-only><ion-icon name="ios-notifications-outline"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="font-style: italic;background-color: #122967;">
+  <ion-list *ngIf="teams">
+    <ion-card  *ngFor="let team of teams;">
+      <ion-item>
+      <ion-avatar item-start>
+        <ion-icon style="font-weight: bolder;color:#f15252;" name="disc" item-start></ion-icon>
+    </ion-avatar>
+      <p>"{{team.team_name}}"<span> team has invited you to join their team.</span></p>
+    </ion-item>
+    <div (click)="aaccept(team)" class="accept">
+        <ion-icon name="checkmark-circle"></ion-icon>Accepted
+     </div>
+     <div (click)="areject(team)" class="reject">
+        <ion-icon name="close-circle"></ion-icon>Rejected
+     </div>
+    </ion-card>
+ 
+  </ion-list>
+  <ion-list *ngIf="players">
+    <ion-card  *ngFor="let player of players;">
+      <ion-item>
+      <ion-avatar item-start>
+        <ion-icon style="font-weight: bolder;color:#f15252;" name="disc" item-start></ion-icon>
+    </ion-avatar>
+      <p>"{{player.player_fname}}"<span> wants to join to your team.</span></p> 
+    </ion-item>
+    <div (click)="jaccept(player)" class="accept">
+        <ion-icon name="checkmark-circle"></ion-icon>Accepted
+     </div>
+     <div (click)="jreject(player)" class="reject">
+        <ion-icon name="close-circle"></ion-icon>Rejected
+     </div>
+    </ion-card>
+ 
+  </ion-list>
+  <ion-list *ngIf="matches">
+    <ion-card  *ngFor="let matche of matches;">
+      <ion-item>
+      <ion-avatar item-start>
+        <ion-icon style="font-weight: bolder;color:#f15252;" name="disc" item-start></ion-icon>
+    </ion-avatar>
+      <p>"{{matche.team_name}}"<span> wants to play with your team.</span></p> 
+    </ion-item>
+    <div (click)="joaccept(matche)" class="accept">
+        <ion-icon name="checkmark-circle"></ion-icon>Accepted
+     </div>
+     <div (click)="joreject(matche)" class="reject">
+        <ion-icon name="close-circle"></ion-icon>Rejected
+     </div>
+    </ion-card>
+ 
+  </ion-list>
+
+  <ion-list *ngIf="splits">
+    <ion-card  *ngFor="let split of splits;">
+      <ion-item>
+      <ion-avatar item-start>
+        <ion-icon style="font-weight: bolder;color:#f15252;" name="disc" item-start></ion-icon>
+    </ion-avatar>
+      <p>"{{split.player_fname}}"<span> shared {{split.split_amount}} AED for you.</span></p> 
+    </ion-item>
+    <div (click)="asplitnoti(split)" class="accept">
+        <ion-icon name="card"></ion-icon>pay
+     </div>
+     <div (click)="rsplitreject(split)" class="reject">
+        <ion-icon name="close-circle"></ion-icon>Rejected
+     </div>
+    </ion-card>
+ 
+  </ion-list>
+  <div *ngIf="this.empty&&this.jempty&&joempty&&amempty">
+    <p style="margin-top: 50%;
+    font-size: large;
+    text-align: center;
+    color: white;">You don't have any notifications yet</p>
+  </div>
+</ion-content>

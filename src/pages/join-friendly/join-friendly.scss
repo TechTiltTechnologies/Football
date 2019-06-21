@@ -1,0 +1,80 @@
+page-join-friendly {
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #ffffff;
+    }
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #ffffff;
+        background-color: transparent;
+    }
+    .header-md::after,
+    .tabs-md[tabsPlacement="top"] > .tabbar::after,
+    .footer-md::before,
+    .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+      left: 0;
+      bottom: -5px;
+      background-position: left 0 top -2px;
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background-image: none;
+    //  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMUCS0gBIh/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+      background-repeat: repeat-x;
+      content: "";
+    }
+    .toolbar-background-md {
+        border-color: #b2b2b2;
+        background-image: linear-gradient(to right, #114090, #132866);
+        border-bottom-right-radius: 14%;
+        border-bottom-left-radius: 14%;
+    }
+    .transparent{
+        background: rgba(158, 158, 158, 0.1);
+        border: none;
+        position: relative;
+        outline: none;
+        padding-top: 6%
+        
+    }
+    .transparentt{
+        background: rgba(255, 255, 255, 0);
+        border: none;
+        position: relative;
+        outline: none;
+       
+      
+}
+
+
+.bgback {
+    background-image:  url("../assets/imgs/playbg.png");
+    background-repeat: repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+}
+
+.alert-md [aria-checked=true] .alert-checkbox-icon {
+    border-color: #552626;
+    background-color: #552626;
+}
+.ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] ion-icon[_ngcontent-c0] {
+    font-size: 1.2em;
+}
+.ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] {
+  height: 28px;
+  /* margin-left: 6%; */
+  background: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  width: 0px;
+}
+ion-card {
+    border-radius: 10px!important;
+  padding: 6px;
+  }
+}

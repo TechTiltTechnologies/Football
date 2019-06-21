@@ -1,0 +1,96 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{player.player_fname}}</ion-title>
+    <ion-buttons style="visibility: hidden;" end>
+        <button (click)="close()" ion-button icon-only>
+        <ion-icon style="color:rgb(250, 245, 245);" name="close"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!-- <ion-list class="team-bg">
+    <ion-card>
+        <ion-list class="team-bg" >
+            <ion-item  no-lines>
+              <h2 class="team-mem-head">PLAYER DETAILS</h2>
+            </ion-item>
+            <table>
+                <tbody>
+                  <tr>
+                    <td > 
+                        <img style="border-radius: 50%;" [src]="player.player_image_url" class="game-icon-img"> </td>
+                    <td> <ion-label class="team-lst">{{player.player_fname}} {{player.player_lname}} <span><sup>*</sup><span></span>({{player.player_role}})</span></ion-label></td>
+                  </tr>
+                  <tr>
+                    <td> 
+                        <ion-icon  name="mail"></ion-icon>  </td>
+                    <td  class="team-lst"> {{player.player_email}} </td>
+                  </tr>
+                  <tr>
+                      <td> 
+                          <ion-icon  name="call"></ion-icon>  </td>
+                      <td  class="team-lst"> {{player.player_mnumber}} </td>
+                    </tr>
+                    <tr>
+                        <td> 
+                            <ion-icon  name="pin"></ion-icon>  </td>
+                        <td  class="team-lst">{{player.player_address}}</td>
+                      </tr>
+                      <tr>
+                        <td> 
+                            <ion-icon  name="pin"></ion-icon>  </td>
+                        <td  class="team-lst">{{player.player_role}}</td>
+                      </tr>
+                  </tbody>
+                </table>
+                </ion-list>
+    </ion-card>
+    <ion-row>
+      <ion-col>
+          <button (click)="addPlayer()" ion-button icon-end class="add-plyrs-btn">
+              ADD players
+              <ion-icon name="add-circle"></ion-icon>
+            </button>
+      </ion-col>
+    </ion-row>
+</ion-list> -->
+<ion-card>
+  <h1 class="head">Player Details</h1>
+  <div class="part">
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="player.player_image_url">
+        </ion-avatar>
+        <h2 class="name">{{player.player_fname}} {{player.player_lname}}</h2>
+        <p class="role">{{player.player_role}}</p>
+        <p class="role">{{player.player_email}}</p>
+        <p class="role">+0 {{player.player_mnumber}}</p>
+      </ion-item>
+      <p class="address">   <span>Address :</span> {{player.player_address}}</p>
+      <ion-row class="center">
+        <ion-col  col-6 >
+            <button (click)="exit()" [disabled]="!isenabled" class="remove">Exit Team</button>
+        </ion-col>
+        <ion-col  col-6 >
+          <div class="border">
+            <ion-col style="color:#ffc942" *ngFor="let star of stars">
+              <ion-icon [name]="star"></ion-icon>
+            </ion-col> 
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col class="center"><button class="give" (click)="confirm()">Give Rating ?</button></ion-col>
+      </ion-row>
+     
+     
+    </div>
+    </ion-card>
+
+</ion-content>

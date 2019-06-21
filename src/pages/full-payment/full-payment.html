@@ -1,0 +1,99 @@
+
+<ion-header style="font-style: italic">
+
+  <ion-navbar>
+    <ion-title style="text-align: center;">Full Payment</ion-title>
+    <ion-buttons style="visibility: hidden;" end>
+        <button (click)="notify()" ion-button icon-only>
+        <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content style="font-style: italic" padding class="card-background-pages">
+  <ion-card>
+    <img src="../assets/imgs/payment-bg1.png"/>
+    <div class="card-title">
+      <h1>Total  Amount</h1>
+      <h2>AED 850.00</h2>
+    
+    </div>
+    <div class="card-subtitle">
+      <ion-list>
+        <ion-row>
+          <ion-col>
+            <ion-input style="color: black;" [(ngModel)]="cardinfo.number" placeholder="card number"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <ion-input style="color: black;" [(ngModel)]="cardinfo.expMonth" placeholder="exp Month"></ion-input>
+          </ion-col>
+          <ion-col>
+              <ion-input style="color: black;" [(ngModel)]="cardinfo.expYear" placeholder="exp Year"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <ion-input style="color: black;" [(ngModel)]="cardinfo.cvc" placeholder="cvc"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <button (click)="clikc()" style="background-color: #a94c4c;" ion-button block>Pay</button>
+        </ion-row>
+        <!-- <ion-item>
+          <ion-label stacked >Card Number</ion-label>
+          <ion-input type="number" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Expiry Date</ion-label>
+          <ion-select [(ngModel)]="month">
+            <ion-option value="01" selected="true">01</ion-option>
+            <ion-option value="02">02</ion-option>
+            <ion-option value="03">0</ion-option>
+            <ion-option value="04">04</ion-option>
+            <ion-option value="05">05</ion-option>
+            <ion-option value="06">06</ion-option>
+            <ion-option value="07">07</ion-option>
+            <ion-option value="08">08</ion-option>
+            <ion-option value="09">09</ion-option>
+            <ion-option value="10">10</ion-option>
+            <ion-option value="11">11</ion-option>
+            <ion-option value="12">12</ion-option>
+          </ion-select>
+          <ion-select [(ngModel)]="year">
+            <ion-option selected="true">2019</ion-option>
+            <ion-option>2020</ion-option>
+            <ion-option>2021</ion-option>
+            <ion-option>2022</ion-option>
+            <ion-option>2023</ion-option>
+            <ion-option >2024</ion-option>
+            <ion-option>2025</ion-option>
+            <ion-option>2026</ion-option>
+            <ion-option>2027</ion-option>
+            <ion-option>2028</ion-option>
+            <ion-option>2029</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked >CVV</ion-label>
+          <ion-input type="number" type="tel" maxlength="3" clearInput [(ngModel)]="userPhone" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Card Holder Name</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Save Card</ion-label>
+          <ion-checkbox [(ngModel)]="Save"></ion-checkbox>
+        </ion-item>
+        <button ion-button color="primary" (click)="confirm()">Pay AED 850.00</button>
+       -->
+      </ion-list>
+    </div>
+  
+  </ion-card>
+</ion-content>

@@ -1,0 +1,55 @@
+
+
+<!-- create by dinesh -->
+<ion-content style="font-style: italic;">
+  <div>
+    <div style="position: absolute;
+    margin-top: 14%;
+    margin-left: 18%;
+    font-size: 4em;
+    color: white;
+    font-weight: bold;">
+      <p>Street</p>
+      <p style="margin-top: -29%;
+      margin-left: 44px;">League</p></div>
+    <img style="height: 300px;width: 100%;" src="../assets/imgs/bg-img2.png">
+  </div>
+  <div style="margin-top: 0%;">
+  <ion-item style="width: 80%;margin-left: 9%;">
+    <ion-label stacked>User Name</ion-label>
+    <ion-input type="email" name="emailid" #emailid placeholder="Email ID..."></ion-input>
+  </ion-item>
+  
+  <ion-item style="width: 80%;margin-left: 9%;">
+    <ion-label stacked>Password</ion-label>
+    <ion-input type="{{type}}" name=”password” #password placeholder="********"></ion-input>
+    <button style="margin-top: 12%;" *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> 
+      <ion-icon style="font-size: 20px;" name="eye"></ion-icon>
+    </button>
+    <button style="margin-top: 12%;" *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> 
+      <ion-icon style="font-size: 20px;" name="eye-off" ></ion-icon>
+    </button>
+  </ion-item>
+<div>
+    <ion-checkbox style="width: 4%;height: 14px;margin-left: 13%;" [(ngModel)]="isChecked" (click)="keep()"></ion-checkbox>
+    <ion-label style="font-size: 10px;margin-left: 2%;color: #1c315e;display: inline-flex;">keep me logged in</ion-label>
+      <p style="font-size: 10px;
+      margin-top: -6%;
+       margin-left: 67%;color: #1c315e;" (click)="forget()">Forgot Password?</p> 
+</div>
+ <div style="margin-top: 5%;">
+  <button (click)="Login()" style="width: 80%;margin-left: 8%;font-weight: bold;font-size: 18px;text-transform: capitalize;" ion-button color="primary">Sign in</button>
+  </div>
+</div>
+<div>
+    <p style="margin-left: 24%;color: #1c315e;">Don't have an account? <span style="color: #1c315e;
+      font-weight: bolder;" (click)="signup()">SignUp</span></p>
+</div>
+<div (click)="guest()" style="margin-left: 79%;margin-top: 12%;margin-bottom: 10%;font-weight: bolder;font-size: 20px;">
+     Guest
+     <img src="../assets/imgs/chevronRight.png">
+      <!-- <ion-icon style="margin-bottom: -2.5%;" slot="end" name="arrow-forward"></ion-icon> -->
+    
+</div>
+</ion-content>
+

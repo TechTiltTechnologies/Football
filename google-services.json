@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "958101381019",
+    "firebase_url": "https://street-league-a8004.firebaseio.com",
+    "project_id": "street-league-a8004",
+    "storage_bucket": "street-league-a8004.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958101381019:android:380f0dee78e56e9d",
+        "android_client_info": {
+          "package_name": "com.street.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958101381019-mmfskdogmvrgmp0n4ts3a5in4400jvs2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNwPpKCpoVHby5Rma5rAqDf7UyEC0adpM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958101381019-mmfskdogmvrgmp0n4ts3a5in4400jvs2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

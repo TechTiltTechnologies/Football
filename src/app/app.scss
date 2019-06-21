@@ -1,0 +1,93 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.alert-md .alert-head {
+    text-align: left; 
+    text-align: start;
+   padding: 24px 24px 20px;
+   //background-color: white;
+   color: black;
+}
+
+.alert-md .alert-title {
+   font-size: 16px;
+ }
+.alert-wrapper {
+   z-index: 10;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   min-width: 81%;
+   max-height: 114%;
+   opacity: 0;
+   contain: content;
+   font-style: italic;
+}
+.alert-md .alert-button {
+   text-align: right;
+   text-align: end;
+   border-radius: 2px;
+   position: relative;
+   overflow: hidden;
+   font-weight: 500;
+   text-transform: uppercase;
+   color: #2B3568;
+   background-color: transparent;
+   margin: 0 8px 0 0;
+   padding: 10px;
+   font-style: italic;
+}
+.icon-color{
+   color: #2B3568 !important;
+}
+.alert-md .alert-input:focus {
+   margin-bottom: 4px;
+   border-bottom: 2px solid #2B3568;
+}
+.alert-md .alert-wrapper {
+   border-radius: 2px;
+   max-width: 280px;
+   margin-top: -23%;
+   background-color: #fafafa;
+   -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+   box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+}
+.alert-md [aria-checked=true] .alert-checkbox-icon {
+    border-color: #2B3568;
+    background-color: #2B3568;
+}
+
+.picker-md .picker-prefix, .picker-md .picker-suffix, .picker-md .picker-opt.picker-opt-selected {
+   color: #2B3568;
+ }
+ .picker-md .picker-button, .picker-md .picker-button.activated {
+   margin: 0;
+   height: 44px;
+   color: #2B3568;
+   background: transparent;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+ }
+ .tab-button-text {
+   display: block !important
+}
+

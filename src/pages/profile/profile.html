@@ -1,0 +1,160 @@
+
+ <ion-header style="font-style: italic">
+  
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+            </button>
+      <ion-title style="text-align: center;">{{"Profile" | translate}}</ion-title>
+
+      <ion-buttons end>
+        <button (click)="edit()" ion-button icon-only>
+          {{"Edit" | translate}}
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+
+  <ion-content style="font-style: italic" class="plyr_prof_bg">
+    <!-- <h3>{{ profilevalue }}</h3> -->
+    <div *ngIf="profilevalue" class="plyr-wrapper">
+      <ion-list>
+        <h3>{{ profilevalue.player_fname }}</h3>
+      </ion-list>
+      <ion-list class="ply-pr-info">
+            <ion-grid >
+                <ion-row>
+                    <ion-col style="margin-top: -1%;" col-6>
+                            <ion-select style="max-width:100%;
+                            font-size: 12px;" [(ngModel)]="selectflag" (ngModelChange)="selectFlag(i,selectflag.name)" placeholder="{{'Select Your Country' | translate}}">
+                            <ion-option *ngFor="let flag of flags" [value]="flag" [src]="flag">{{flag.name}} <img style="height: 14px;
+                              width: 14px;" [src]="flag.flag"> </ion-option>
+                          </ion-select>
+                          <img *ngIf="!flag" class = "flag" [ngClass]="{'aflag' : clanguage == 'ar'}"[src]="default">
+                        <img *ngIf="flag" class = "flag" [ngClass]="{'aflag' : clanguage == 'ar'}" [src]="flag">
+                     
+  
+                        
+                        <p  class="rating-score" [ngClass]="{'arating-score' : clanguage == 'ar'}">{{"No.of Games" | translate}}  - 4</p>
+                        <p  class="rating-score" [ngClass]="{'arating-score' : clanguage == 'ar'}">{{"Tournaments" | translate}}  - {{profilevalue.played_tournments}}</p>
+                    </ion-col>
+                    <ion-col col-6>
+                        <p style="margin-left: 21%;" class="rating-score">{{"Profile Score" | translate}}  - {{profilevalue.player_rating}}.0</p>
+                      <img style="border-radius: 50%;" [src]="profilevalue.player_image_url" class="prof-img1"> 
+                      </ion-col>
+                
+                </ion-row>
+                <ion-row>
+                <ion-col col-6>
+                </ion-col>
+                <ion-col col-6>
+                </ion-col>
+                </ion-row>
+              </ion-grid>
+       
+      </ion-list>
+      <ion-list style="position: relative;" >
+        <ion-item class="ply-prof-bg1">
+          <ion-icon name="contact" item-left primary class="ply-prof-icon"></ion-icon>
+          <ion-input type="text" value="{{ profilevalue.player_fname }}" class="ply-prof-dtls" [ngClass]="{'aply-prof-dtls' : clanguage == 'ar'}" disabled></ion-input>
+        </ion-item>
+        <ion-item class="ply-prof-bg2">
+          <ion-icon name="mail" item-left primary class="ply-prof-icon"></ion-icon>
+          <ion-input type="email" value="{{ profilevalue.player_email }}" class="ply-prof-dtls" [ngClass]="{'aply-prof-dtlss' : clanguage == 'ar'}"disabled></ion-input>
+        </ion-item>
+        <ion-item class="ply-prof-bg3">
+          <ion-icon name="call" item-left primary class="ply-prof-icon"></ion-icon>
+          <ion-input type="number" value="{{ profilevalue.player_mnumber }}" class="ply-prof-dtls" [ngClass]="{'aply-prof-dtlsss' : clanguage == 'ar'}" disabled></ion-input>
+        </ion-item>      
+        <ion-item (click)="bhstry()" class="ply-prof-bg4">
+          <ion-icon name="paper" item-left primary class="ply-prof-icon"></ion-icon>
+          <a href="#" class="ply-prof-dtls">{{"Booking History" | translate}}</a>
+        </ion-item>
+        <ion-item (click)="share()" class="ply-prof-bg5">
+            <ion-icon name="person-add" item-left primary class="ply-prof-icon"></ion-icon>
+            <a href="#" class="ply-prof-dtls">{{"Invite Friends" | translate}}</a>
+        </ion-item>
+        
+       
+      </ion-list>
+    </div> 
+
+    <ion-item class="ply-prof-bg7">
+    
+      </ion-item>
+  </ion-content> 
+
+  <!-- <ion-header style="font-style: italic">
+  
+    <ion-navbar>
+      <ion-title style="text-align: center;">Profile Page</ion-title>
+
+      <ion-buttons end>
+        <button (click)="edit()" ion-button icon-only>
+          Edit
+        </button>
+        </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="plyr_prof_bg">
+    <div class="plyr-wrapper">
+      <ion-list>
+        <h3>Mohammed Abdullah</h3>
+      </ion-list>
+      <ion-list class="ply-pr-info">
+          <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                  <div style="width: 50%">
+                      <img src="../assets/imgs/teamlogo.png" class="prof-logo">
+                  </div>
+                  <div style="width: 60%">
+                      <img src="../assets/imgs/flag.png" class="flag">
+                      <h4 class="rating-score">89.5</h4>
+                  </div>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-icon ios="ios-create" md="md-create" class="edit"></ion-icon>
+                    <img src="../assets/imgs/profile_icon.png" class="prof-img1"> 
+                </ion-col>
+            </ion-row>
+          </ion-grid>
+         
+      </ion-list>
+      <ion-list style="position: relative;
+      top: 32px;" >
+        <ion-item class="ply-prof-bg1">
+          <ion-icon name="contact" item-left primary class="ply-prof-icon"></ion-icon>
+          <ion-input type="text" value="Mohhamad Abdullah" class="ply-prof-dtls"></ion-input>
+        </ion-item>
+        <ion-item class="ply-prof-bg2">
+          <ion-icon name="mail" item-left primary class="ply-prof-icon"></ion-icon>
+          <ion-input type="email" value="mohhamadAbdullah12@gmail.com" class="ply-prof-dtls"></ion-input>
+        </ion-item>
+        <ion-item class="ply-prof-bg3">
+          <ion-icon name="call" item-left primary class="ply-prof-icon"></ion-icon>
+          <ion-input type="number" value="72561975433" class="ply-prof-dtls"  disabled></ion-input>
+        </ion-item>      
+        <ion-item class="ply-prof-bg4">
+          <ion-icon name="paper" item-left primary class="ply-prof-icon"></ion-icon>
+          <a href="#" class="ply-prof-dtls">Booking History</a>
+        </ion-item>
+        <ion-item class="ply-prof-bg5">
+            <ion-icon name="person-add" item-left primary class="ply-prof-icon"></ion-icon>
+            <a href="#" class="ply-prof-dtls">Invite Friends</a>
+        </ion-item>
+        <ion-item class="ply-prof-bg6">
+            <ion-icon name="card" item-left primary class="ply-prof-icon"></ion-icon>
+            <a href="#" class="ply-prof-dtls">Payment Options</a>
+        </ion-item>
+       
+      </ion-list>
+    </div>  
+    <ion-item class="ply-prof-bg7">
+    
+      </ion-item>
+  </ion-content> -->

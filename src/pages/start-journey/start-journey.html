@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align: center;">Congratulation</ion-title>
+    <ion-buttons style="visibility: hidden;" end>
+      <button (click)="notify()" ion-button icon-only>
+      <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+      </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="font-style: italic;">
+
+<ion-grid>
+  <ion-row justify-content-center align-items-center>
+    <ion-fab>
+      <ion-row>
+        <ion-col >
+          <img src="/assets/imgs/success.png" class="success" />
+          <h6 class="head">Success</h6>
+          <p class="txt">Your Account has been created</p>
+        </ion-col>     
+      </ion-row>
+    </ion-fab>
+  </ion-row>
+  <button class="regsiter" (click)="login()" >Start Your Journey</button>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,175 @@
+page-create-team {
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #ffffff;
+    }
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #ffffff;
+        background-color: transparent;
+    }
+    .header-md::after,
+    .tabs-md[tabsPlacement="top"] > .tabbar::after,
+    .footer-md::before,
+    .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+      left: 0;
+      bottom: -5px;
+      background-position: left 0 top -2px;
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background-image: none;
+    //  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMUCS0gBIh/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+      background-repeat: repeat-x;
+      content: "";
+    }
+    .toolbar-background-md {
+        border-color: #b2b2b2;
+        background-image: linear-gradient(to right, #114090, #132866);
+        border-bottom-right-radius: 14%;
+        border-bottom-left-radius: 14%;
+    }
+
+    .cteam_bg
+    {
+        background-image: url("../assets/imgs/team_bg.png");
+        background-repeat: repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        position: absolute;
+
+    }
+
+    .cteam_content
+    {
+      //  top:100px;
+        position: relative;
+        border: 3px solid #a94d4d;
+        padding:0px 15px 0px 0px;
+        margin: 0px 35px 0px 35px;
+        background-color: #f6eded87;
+        height: 75% !important;       
+        border-radius:10px;
+       
+        
+        
+    }
+    .text-input::-moz-placeholder {
+        color: black;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      
+      .text-input:-ms-input-placeholder {
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      
+      .text-input::-webkit-input-placeholder {
+        text-indent: 0;
+        color: black;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    .text-input-md {
+        margin: 0px 8px;
+        padding: 0;
+        width: calc(100% - 8px - 8px);
+    }
+    
+    .item-md
+    {
+       // background-color: #f6eded;
+        color: #000;
+    }
+    // .list-md .item-block .item-inner
+
+    // {        
+    //     border-bottom: 2px solid #a94d4d;
+    //     background: #f6eded87;
+        
+    // }
+    .input-style{
+        color:white;margin-left:4%;width:91%
+      }
+      .input-trasparent{
+        background: rgba(255, 255, 255, 0.42);
+          border: none;
+          position: relative;  
+          outline: none;  
+          height: 30p;
+          color: #423c3e;
+      }
+    
+    .item-md
+    {
+        padding-left: 0px;
+    }
+    .cteam_top
+    {
+        margin-top: 18%;
+        background-color: rgba(212, 76, 76, 0);
+        border-bottom: 1px solid #e0e0e0;
+        width: 87%;
+    margin-left: 5%;
+    }
+
+    .cteam_top1
+    {
+        margin-top: 18%;
+    background-color: rgba(212, 76, 76, 0);
+    border-bottom: 1px solid #e0e0e0;
+    width: 87%;
+    margin-left: 5%;
+    }
+
+    .cteam_top2
+    {
+        margin-top: 10%;
+       
+    }
+
+    .cteam_top3
+    {
+        top: 140px;
+        background: #faf5f500;
+    }
+
+    // .button-md-light
+    // {
+    //     background:#a94d4d;
+    //     color: #fff;
+    //     width: 100px;
+    //     height: 100px;
+    //     border-radius: 50px;
+    //     text-align: center;
+    //     line-height: 20px;
+    //     letter-spacing: 1px;
+    
+    // }
+    .text-align
+    {
+        text-align: center;
+        font-family: poppins;
+        font-weight: bold;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    .button-md-danger
+    {
+        color: #fff;
+        background-color: #a94d4d;
+        margin-left: 20px;
+    }
+    .item-md ion-avatar ion-img, .item-md ion-avatar img {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 60px;
+        height: 60px;
+    }
+}

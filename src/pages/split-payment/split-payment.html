@@ -1,0 +1,45 @@
+<ion-header style="font-style: italic">
+  <ion-navbar>
+    <ion-title style="text-align: center;">
+      Split Payment
+    </ion-title>
+    <ion-buttons style="visibility: hidden;" end>
+        <button (click)="notify()" ion-button icon-only>
+        <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+        </button>
+        </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="font-style: italic" padding class="card-background-page">
+  <ion-card>
+    <img src="../assets/imgs/payment-bg.png"/>
+    <div class="card-title">
+      <h1>Total  Amount</h1>
+      <h2>AED 850.00</h2>
+    
+    </div>
+    <div class="card-subtitle">
+        <ion-list>
+
+            <ion-item>
+              <ion-label>Enter Amount</ion-label>
+              <ion-input type="text" placeholder="Amount"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Select Players</ion-label>
+                <ion-select [(ngModel)]="toppings" multiple="true" cancelText="cancel" okText="Okay!">
+                    <ion-option value="bacon" selected="true">Mohamed</ion-option>
+                    <ion-option value="olives">Hasan</ion-option>
+                  </ion-select>
+              </ion-item>
+            <ion-item>
+              <ion-label>Purpose</ion-label>
+              <ion-input type="text" placeholder="Reason" class="reason"></ion-input>
+            </ion-item>
+            <button ion-button color="primary">Send Request</button>
+          </ion-list>
+    </div>
+  
+  </ion-card>
+</ion-content>

@@ -1,0 +1,87 @@
+
+<ion-content style="font-style: italic;">
+    <div>
+        <div style="position: absolute;
+        margin-left: 18%;
+        font-size: 4em;
+        color: white;
+        font-weight: bold;">
+          <p>Street</p>
+          <p style="margin-top: -29%;
+          margin-left: 44px;">League</p></div>
+        <img style="height: 209px;width: 100%;" src="../assets/imgs/bg-img1.png">
+      </div>
+    <div style="text-align: center;">
+      <h3 style="color: #2f426a;">Create a new account</h3>
+    </div>
+    <div>
+      <ion-item style="width: 80%;margin-left: 9%;">
+        <ion-label stacked>User Name</ion-label>
+        <ion-input type="text" [(ngModel)]="fname" placeholder="Nellai"></ion-input>
+      </ion-item>
+      
+      <!-- <ion-item style="width: 80%;margin-left: 9%;">
+        <ion-label stacked>Last Name</ion-label>
+        <ion-input type="text" value="" [(ngModel)]="lname" placeholder="Dinesh"></ion-input>
+      </ion-item>
+   -->
+      <ion-item style="width: 80%;margin-left: 9%;">
+        <ion-label stacked>Email Address</ion-label>
+        <ion-input type="mail" value="" (ionChange)="emailvalidate()" [(ngModel)]="email"  placeholder="example@mail.com"></ion-input>
+      </ion-item>
+      <p style="margin-left: 13%;
+      font-size: 10px;
+      color: red;" *ngIf="emvalidate">Please Enter a valid email id</p>
+      <ion-item style="width: 80%;margin-left: 9%;">
+        <ion-label stacked>Mobile Number</ion-label>
+        <ion-input type="number"  maxlength="10" (ionChange)="mobvalidate()" value="" [(ngModel)]="mobile" placeholder="(999) 9999-999"></ion-input>
+      </ion-item>
+     <p style="margin-left: 13%;
+     font-size: 10px;
+     color: red;" *ngIf="validate">Please Enter a valid phone number</p>
+      <!-- <ion-item style="width: 80%;margin-left: 9%;">
+          <ion-label stacked>City</ion-label>
+          <ion-input type="text" value="" name="city" #city placeholder="Dhubai"></ion-input>
+        </ion-item> -->
+  
+        <!-- <ion-item style="width: 80%;margin-left: 9%;">
+            <ion-label stacked>Address</ion-label>
+            <ion-input type="text" value="" name="address" #address placeholder="No:6,South Street"></ion-input>
+          </ion-item> -->
+          <ion-item style="width: 80%;margin-left: 9%;">
+              <ion-label stacked>Select Role</ion-label>
+              <ion-select #role value="">
+                <ion-option value="Forwarder">Forwarder</ion-option>
+                <ion-option value="MidFielder">MidFielder</ion-option>
+                <ion-option value="Defender">Defender</ion-option>
+                <ion-option value="Goal Keeper">Goal Keeper</ion-option>
+              </ion-select>
+            </ion-item>
+      <ion-item style="width: 80%;margin-left: 9%;">
+        <ion-label stacked>password</ion-label>
+        <ion-input  [(ngModel)]="password" type="password" placeholder="********"></ion-input>
+      </ion-item>
+
+      <ion-checkbox (click)="check()" style="width: 4%;font-style: italic;height: 14px;margin-left: 13%;" [(ngModel)]="isChecked"></ion-checkbox>
+      <ion-label style="font-size: 14px;margin-left: 2%;font-style: italic;color: #1c315e;display: inline-flex;">I have read the <span (click)="terms()" style="font-weight: bolder;"><u>Terms & Conditions</u></span></ion-label>
+
+      
+      <!-- <ion-item style="width: 80%;margin-left: 9%;">
+        <ion-label stacked>Confirm Password</ion-label>
+        <ion-input type="password" placeholder="********"></ion-input>
+      </ion-item> -->
+    </div>
+    </ion-content>
+
+    <ion-footer>
+      <div style="margin-top: 5%;">
+          <button [disabled]="!isenabled" style="width: 80%;margin-left: 8%;font-weight: bold;font-size: 18px;text-transform: capitalize;" (click)="register()" ion-button color="primary">Let's Go</button>
+          </div>
+    </ion-footer>
+  
+  
+  <!-- <ion-footer style="font-style: italic;">
+      <ion-checkbox (click)="check()" style="width: 4%;height: 14px;margin-left: 13%;" [(ngModel)]="isChecked"></ion-checkbox>
+      <ion-label style="font-size: 14px;margin-left: 2%;color: #1c315e;display: inline-flex;">I have read the <span (click)="terms()" style="font-weight: bolder;"><u>Terms & Conditions</u></span></ion-label>
+  </ion-footer> -->
+  

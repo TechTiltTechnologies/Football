@@ -1,0 +1,67 @@
+<ion-header style="font-style: italic">
+    <ion-navbar >
+  
+   <ion-title style="text-align: center;">Join Other Team
+                  </ion-title>
+   
+                  <ion-buttons style="visibility: hidden;" end>
+                      <button (click)="fillter()" ion-button icon-only>
+                          <ion-icon  style="font-size: 20px;color:white" name="funnel"></ion-icon>
+                      </button>
+                    </ion-buttons>  
+    </ion-navbar>
+  </ion-header>
+  
+  
+  
+  <ion-content style="font-style: italic" >
+  
+      <ion-searchbar
+      [(ngModel)]="searchTerm"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="getItems($event)"
+      (ionCancel)="onCancel($event)">
+    </ion-searchbar>
+
+  
+    <ion-list no-lines>
+  <ion-card *ngFor="let list of lists;let i= index" (click)="jteam(i,list)">
+        <ion-row style="background-color: rgba(255, 255, 255, 0);" >
+           <ion-col col-4>
+              <ion-avatar item-start style="background: transparent;
+              border-radius: 73%;
+              color: rgb(18, 40, 104)">
+                <img style="border-radius: 25%;height: 110px;
+                overflow: hidden;
+              " [src]="list.team_logo_url">
+              </ion-avatar >
+           </ion-col>
+           <ion-col col-8>
+              <div style="margin-left: 4%;">
+                  <p style="font-size: 17px;font-weight: 500;color: black;padding-bottom: 7px">{{list.team_name}}</p>
+                  <p style="font-size: 12px;padding-bottom: 7px"> {{list.player_fname}} {{list.player_lname}}*({{list.team_role}})</p>
+                  <p style="font-size: 12px"> {{list.team_city}}</p>
+                   <div >
+                    <ionic3-star-rating 
+                    activeIcon = "ios-star"
+                    defaultIcon = "ios-star-outline"
+                    activeColor = "rgb(255, 220, 29)" 
+                    defaultColor = "gold"
+                    readonly="true"
+                    rating="{{list.team_rating}}">
+                    </ionic3-star-rating>
+                   </div>
+                 </div>
+            </ion-col>
+         
+           
+          </ion-row> 
+        </ion-card>
+          <div *ngIf="empty">
+            <p style="margin-top: 50%;
+            font-size: large;text-align: center">No Data Found</p>
+          </div>
+        </ion-list>
+  
+  </ion-content>
+  

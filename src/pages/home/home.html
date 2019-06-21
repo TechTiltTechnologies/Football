@@ -1,0 +1,110 @@
+<ion-header style="font-style: italic">
+
+  <ion-navbar icon-left>
+    <button style="color: white;" ion-button menuToggle>
+      <ion-icon name="funnel"></ion-icon>
+    </button>
+
+    <ion-title>{{"Street League" | translate}}</ion-title>
+
+    <ion-buttons end>
+      <button (click)="notify()" ion-button icon-only>
+        <ion-icon class="animated swing" style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <!-- <ion-icon style="margin-left: 19%;color: white;" name="notifications-outline"></ion-icon> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content style="font-style: italic;">
+  <!-- <div *ngIf="local">
+    <p style="margin-left: 4%;"><span style="color: #2b3568;"><ion-icon name="locate"></ion-icon></span>{{local}},{{sublocal}}</p>
+  </div> -->
+
+  
+  
+  <ion-card style="border-radius: 10px!important;
+padding: 6px;">
+    <ion-item>
+      <ion-label stacked>{{"Location" | translate}}</ion-label>
+      <ion-select *ngIf="local" #city [(ngModel)]="selectlocation"
+        (ngModelChange)="selectCountry(i,selectlocation.ground_city)" placeholder="{{sublocal}},{{local}}">
+        <ion-option *ngFor="let location of locations" [value]="location">{{location.ground_city}}</ion-option>
+      </ion-select>
+      <ion-select *ngIf="!local" #city [(ngModel)]="selectlocation"
+        (ngModelChange)="selectCountry(i,selectlocation.ground_city)" placeholder="Select your city">
+        <ion-option *ngFor="let location of locations" [value]="location">{{location.ground_city}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-card *ngFor="let ground of grounds;let i= index" (click)="stadium(i,ground)" class="radius ground_list_wrap">
+    <img class="imgradius" style="height: 145px;border-radius: 9px;" [src]=ground.ground_picture_url />
+    <div class="transparent" style="border-radius: 9px;">
+      <div class="card-title" [ngClass]="{'acard-title' : clanguage == 'ar'}">
+        <p style="color:white;">{{ground.ground_name}}</p>
+      </div>
+
+      <div class="card-subtitle" [ngClass]="{'acard-subtitle' : clanguage == 'ar'}"  >
+        <p style="color:white;">{{ground.ground_city}}</p>
+        <!-- <span *ngIf = "ground.ground_discount" style="float: right;background: #b1762a;
+        width: 12%;
+        padding: 1%;position: relative; right: 20px; bottom: 36px; font-size: 12px;">{{ground.ground_discount}} OFF</span> -->
+        <div *ngIf = "ground.ground_discount" class="ribbon orange" [ngClass]="{'aribbon aorange' : clanguage == 'ar'}" >{{ground.ground_discount}} OFF</div>
+      </div>
+    </div>
+
+    <ion-card-content>
+      <ion-row>
+
+        <ion-col col-6>
+          <p class = "start" [ngClass]="{'astart' : clanguage == 'ar'}">{{"Starting From" | translate}}</p>
+          <p *ngIf = "!ground.ground_discount" class = "notdiscount" [ngClass]="{'anotdiscount' : clanguage == 'ar'}" >{{ground.ground_price}} AED</p>
+          <!-- <s *ngIf = "ground.ground_discount" style="font-weight: bolder;margin-left: -73px;color: #1c315e;text-align: left;">{{ground.ground_price}} AED</s> -->
+          <p *ngIf = "ground.ground_discount" style="font-weight: bolder;font-size: 15px;color: #1c315e;text-align: left;">
+              <span class="strike" [ngClass]="{'astrike' : clanguage == 'ar'}" >{{ground.ground_price}} AED</span><br>
+          </p>
+         
+          <p *ngIf = "ground.ground_discount" class = "notdiscount" [ngClass]="{'anotdiscount' : clanguage == 'ar'}">{{ground.discount_price}} AED</p>
+        </ion-col>
+        <ion-col col-6>
+          <p class = "rate" [ngClass]="{'arate' : clanguage == 'ar'}">{{"Rating" | translate}}</p>
+          <div class = "ratestar" [ngClass]="{'aratestar' : clanguage == 'ar'}">
+            <ionic3-star-rating activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="rgb(255, 220, 29)"
+              defaultColor="gold" readonly="true" rating="{{ground.ground_rating}}">
+            </ionic3-star-rating>
+          </div>
+
+          <!-- <img style="width: 50%;margin-left: 57%;" src="../assets/imgs/stars.png"/> -->
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="empty">
+    <p style="margin-top: 50%;
+                      font-size: large;text-align: center">No Data Found</p>
+  </div>
+  <ion-item no-lines>
+    <button (click)="getgroundlist()"
+      style="width: 80%;margin-left: 8%;font-weight: bold;font-size: 18px;text-transform: capitalize;" ion-button
+      color="primary">Refresh</button>
+  </ion-item>
+
+  <ion-fab (click)="filtter()" style="position: fixed;
+              bottom: 82px;
+              right: 20px;">
+    <button ion-fab color="primary">
+      <ion-icon name="funnel"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>
+<ion-footer>
+
+</ion-footer>

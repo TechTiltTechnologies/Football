@@ -1,0 +1,277 @@
+
+
+
+         <ion-header>
+
+            <ion-navbar>
+              <ion-title>{{teamDetails.team_name}}</ion-title>
+              <ion-buttons style="visibility: hidden;" end>
+                  <button (click)="notify()" ion-button icon-only>
+                  <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+                  </button>
+                  </ion-buttons>
+            </ion-navbar>
+          
+          </ion-header>
+          
+          <ion-content >
+
+            <!-- <div (click)="formation()" id="mydiv">
+              <div id="mydivheader">Click here to move</div>
+              <p>Move</p>
+              <p>this</p>
+              <p>DIV</p>
+            </div> -->
+
+              <ion-segment class="SwipedTabs-tabs">
+                  <ion-segment-button *ngFor = 'let tab of tabs ; let i = index ' value = "IgnoreMe"(click)="selectTab(i)" 
+                  [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider && ( this.SwipedTabsSlider.getActiveIndex() === i || (
+                tabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }'>
+                 {{tab}}  
+                  </ion-segment-button>
+                </ion-segment>
+               
+                <div id='indicator' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%' : (100/this.tabs.length)}"></div>
+              <ion-slides  #SwipedTabsSlider (ionSlideDrag) ="animateIndicator($event)"
+              (ionSlideWillChange) = "updateIndicatiorPosition()"
+              (ionSLideLoadChange)="updateIndicatiorPosition()"
+              (pan) = "updateIndicatiorPosition()"
+              [pager] = "false">
+              <ion-slide>
+                
+                    <ion-list>
+                        <ion-item class="game-info">
+                          <div class=img-cont>
+                            <img [src]="tlogo" class="prof-img"> 
+                          </div>
+                          <div class=game-details>
+                              <h2>{{teamDetails.team_name}}</h2>
+                            <div  class="game-deets-img-wrap">
+                              <h6>TOURNAMENTS</h6>
+                              <h5>GAMES</h5>
+                              <img src="../assets/imgs/game-icon-img1.png" class="game-icon-img">
+                              <h6><span>{{teamDetails.tourn_wins}}</span></h6>
+                             </div>
+                             <div  class="game-deets-img-wrap">
+                               <h6>FRIENDLY</h6>
+                               <h5>GAMES</h5> 
+                                <img src="../assets/imgs/game-icon-img2.png" class="game-icon-img"> 
+                                <h6><span> </span></h6>
+                             </div>
+                            <div  class="game-deets-img-wrap">
+                              <h6>TEAM SCORE</h6>
+                              <h5 style="visibility: hidden">Games</h5>
+                              <img src="../assets/imgs/game-icon-img3.png" class="game-icon-img"> 
+                              <h6><span>{{teamDetails.scores}}</span></h6>
+                            </div>
+                          </div>
+                          </ion-item>
+                        </ion-list>
+
+                    <!-- <ion-segment class="SwipedTabs-tabs">
+                        <ion-segment-button *ngFor = 'let stab of stabs ; let i = index ' value = "IgnoreMe"(click)="selectSTab(i)" 
+                        [ngClass]='{ "SwipedTabs-activeTab" : ( this.SwipedTabsSlider && ( this.SwipedTabsSlider.getActiveIndex() === i || (
+                          stabs.length -1 === i&& this.SwipedTabsSlider.isEnd()))) }'>
+                       {{stab}}  
+                        </ion-segment-button>
+                        
+                      </ion-segment> -->
+                     
+                      <!-- <div id='indicators' class="SwipedTabs-indicatorSegment" [ngStyle]="{'width.%' : (100/this.tabs.length)}"></div>
+                    <ion-slides #SwipedSTabsSlider (ionSlideDrag) ="animateSIndicator($event)"
+                    (ionSlideWillChange) = "updateSIndicatiorPosition()"
+                    (ionSLideLoadChange)="updateSIndicatiorPosition()"
+                    (pan) = "updateSIndicatiorPosition()"
+                    [pager] = "false">
+                      <ion-slide> -->
+                
+                    <ion-list class="team-bg">
+                      <ion-card>
+                          <ion-list class="team-bg" >
+                              <ion-item  no-lines>
+                                <h2 class="team-mem-head">TEAM MEMBERS</h2>
+                              </ion-item>
+                              <table>
+                                  <tbody>
+                                    <tr *ngFor = 'let player of players ; let i = index ' (click)="showplayer(player)">
+                                      <td> 
+                                        
+                                          <img style="border-radius: 50%;"  [src]="player.player_image_url" class="game-icon-img"> </td>
+                                      <td> <ion-label class="team-lst">{{player.player_fname}} {{player.player_lname}} <span><sup>*</sup><span></span>({{player.player_role}})</span></ion-label></td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                  </ion-list>
+                      </ion-card>
+                      <ion-row>
+                        <ion-col>
+                            <button (click)="addPlayer()" ion-button icon-end class="add-plyrs-btn">
+                                ADD players
+                                <ion-icon name="add-circle"></ion-icon>
+                              </button>
+                        </ion-col>
+                      </ion-row>
+
+                      <ion-row>
+                        <ion-col>
+                            <button *ngIf="delete" (click)="deleteTeam()" style="background-color: #e13838" ion-button block icon-end>
+                                Delete Team
+                              </button>
+                        </ion-col>
+                      </ion-row>
+                  </ion-list>
+                  <!-- </ion-slide> -->
+    
+                  <!-- <ion-slide class="team-bg">
+                    <ion-card >
+                        <ion-item  no-lines>
+                            <h2 class="team-mem-head">CONTACT DETAILS</h2>
+                          </ion-item>
+                          <table>
+                              <tbody>
+                                <tr>
+                                  <td> 
+                                      <ion-icon  name="mail"></ion-icon>  </td>
+                                  <td  class="team-lst"> {{teamDetails.team_email}} </td>
+                                </tr>
+                                <tr>
+                                    <td> 
+                                        <ion-icon  name="call"></ion-icon>  </td>
+                                    <td  class="team-lst"> {{teamDetails.team_phone}} </td>
+                                  </tr>
+                                  <tr>
+                                      <td> 
+                                          <ion-icon  name="pin"></ion-icon>  </td>
+                                      <td  class="team-lst"> {{teamDetails.team_city}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                   
+                    </ion-card>
+                    <ion-card >
+                        <ion-item  no-lines>
+                            <h2 class="team-mem-head">TEAM SLOGON</h2>
+                          </ion-item>
+                      <ion-item>
+                     <p style="font-family: cursive;">"{{teamDetails.team_slogon}}"</p>
+                      </ion-item>
+    
+                    </ion-card>
+                  </ion-slide>
+                  </ion-slides> -->
+                 
+                  
+                </ion-slide>
+          
+                <ion-slide style="background-color: #153376;padding-top: 40px;">
+                  <ion-list>
+                    <ion-grid>
+                        <ion-row >
+                            <ion-col  class=" col-6 m-auto">
+                                <button class="tembtns">FFIFRT</button></ion-col>
+                    <ion-col  class=" col-6 m-auto">
+                        <button class="tembtns">FFIFRT </button></ion-col>
+                    </ion-row>
+                    </ion-grid>  
+                    
+                    
+                      <ion-grid class="teamform-bg">
+
+                    <!-- Gk -->
+                    <ion-row>
+                        <ion-col *ngIf="goalkeepers[0]" col-6 class="m-auto">
+                            <img src="assets/imgs/player1.png"/><br/>   
+                            <p *ngIf="!gk" class="name">{{goalkeepers[0].player_fname}}</p><br>             
+                            <p class="role">GK</p>
+                            <br> <ion-icon *ngIf="delete" (click)="goal()" class="closeicon" name="close"></ion-icon>
+                           </ion-col>
+                    </ion-row>
+
+                    <!-- Def -->
+                    <ion-row>
+                        <ion-col *ngIf="defenders[0]" col-3 class="m-auto">
+                            <img src="assets/imgs/player2.png"/>  
+                            <br/>                     
+                          <p *ngIf="!defe" class="name">{{defenders[0].player_fname}}</p><br>             
+                          <p class="role">DEF</p>
+                          <br> <ion-icon *ngIf="delete" (click)="def()" class="closeicon" name="close"></ion-icon>                    
+                        </ion-col>
+                        <ion-col *ngIf="defenders[1]" col-3 class="m-auto">
+                          <img src="assets/imgs/player3.png"/><br/>   
+                          <p *ngIf="!defe1" class="name">{{defenders[1].player_fname}}</p><br>             
+                          <p class="role">DEF</p>   
+                          <br> <ion-icon *ngIf="delete" (click)="def1()" class="closeicon" name="close"></ion-icon>                     
+                         </ion-col>
+                         <ion-col *ngIf="defenders[2]" col-3 class="m-auto">
+                          <img src="assets/imgs/player4.png"/><br/>   
+                          <p *ngIf="!defe2"  class="name">{{defenders[2].player_fname}}</p><br>             
+                          <p class="role">DEF</p>     
+                          <br> <ion-icon *ngIf="delete" (click)="def2()" class="closeicon" name="close"></ion-icon>                   
+                         </ion-col>
+                         <ion-col *ngIf="defenders[3]" col-3 class="m-auto">
+                          <img src="assets/imgs/player5.png"/><br/>   
+                          <p *ngIf="!defe3" class="name">{{defenders[3].player_fname}}</p><br>             
+                          <p class="role">DEF</p>  
+                          <br> <ion-icon *ngIf="delete" (click)="def3()" class="closeicon" name="close"></ion-icon>                      
+                         </ion-col>
+                    </ion-row>
+
+                    <!-- Mid -->
+                    <ion-row>
+                        <ion-col *ngIf="midfielders[0]" col-4 class="m-auto">
+                          <img src="assets/imgs/player6.png"/><br/>   
+                          <p *ngIf="!midd1" class="name">{{midfielders[0].player_fname}}</p><br>             
+                          <p class="role">MID</p>   
+                          <br> <ion-icon *ngIf="delete" (click)="mid()" class="closeicon" name="close"></ion-icon>                      
+                        </ion-col>
+                        <ion-col *ngIf="midfielders[1]" col-4 class="m-auto">
+                          <img src="assets/imgs/player1.png"/><br/>   
+                          <p *ngIf="!midd2" class="name">{{midfielders[1].player_fname}}</p><br>             
+                          <p class="role">MID</p>  
+                          <br> <ion-icon *ngIf="delete" (click)="mid1()" class="closeicon" name="close"></ion-icon>                      
+                         </ion-col>
+                         <ion-col *ngIf="midfielders[2]" col-4 class="m-auto">
+                          <img src="assets/imgs/player2.png"/><br/>   
+                          <p *ngIf="!midd3" class="name">{{midfielders[2].player_fname}}</p><br>             
+                          <p class="role">MID</p>                      
+                          <br> <ion-icon *ngIf="delete" (click)="mid2()" class="closeicon" name="close"></ion-icon> 
+                         </ion-col>
+                    </ion-row>
+ 
+                    <!-- fwd -->
+                    <ion-row>
+                        <ion-col *ngIf="forwarders[0]" col-4 class="m-auto">
+                          <img src="assets/imgs/player3.png"/><br/>   
+                          <p *ngIf="!editfwd" class="name">{{forwarders[0].player_fname}}</p><br>             
+                          <p class="role">FWD</p>   
+                          <br> <ion-icon *ngIf="delete" (click)="editfor()" class="closeicon" name="close"></ion-icon>                     
+                        </ion-col>
+                        <ion-col *ngIf="forwarders[1]" col-4 class="m-auto">
+                          <img src="assets/imgs/player4.png"/><br/>   
+                          <p *ngIf="!editfwd1" class="name">{{forwarders[1].player_fname}}</p><br>             
+                          <p class="role">FWD</p> 
+                          <br> <ion-icon *ngIf="delete" (click)="editforr()" class="closeicon" name="close"></ion-icon>                        
+                         </ion-col>
+                         <ion-col *ngIf="forwarders[2]" col-4 class="m-auto">
+                          <img src="assets/imgs/player5.png"/><br/>   
+                          <p *ngIf="!editfwd2" class="name">{{forwarders[2].player_fname}}</p><br>             
+                          <p class="role">FWD</p>    
+                          <br> <ion-icon *ngIf="delete" (click)="editforrr()" class="closeicon" name="close"></ion-icon>                  
+                         </ion-col>
+                    </ion-row>
+                  </ion-grid>
+
+                    <ion-slides [slidesPerView]="4" style="background-color:#fff;">
+                        <ion-slide *ngFor="let player of players;let i= index" (click)="itemTapped(player)">
+                          <p class="plyrrole">{{i+1}}.{{player.player_role}}</p>
+                          <img src="assets/imgs/player1.png"/>
+                          <p class="plyrnme">{{player.player_fname}}</p>
+                        </ion-slide>
+                      </ion-slides>          
+
+                    </ion-list>             
+                   </ion-slide> 
+                   
+                 </ion-slides>  
+                 </ion-content>
+           

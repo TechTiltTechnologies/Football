@@ -1,0 +1,97 @@
+<ion-header style="font-style: italic">
+    <ion-navbar style="background-image: linear-gradient(to right, #114090, #132866);">
+      <ion-title style="text-align: center">{{details.ground_name}}</ion-title>
+   <ion-row class = "rate" [ngClass]="{'arate' : clanguage == 'ar'}">
+          <ion-col style="color:#ffc942" *ngFor="let star of stars">
+            <ion-icon (click)="ratingg()" [name]="star"></ion-icon>
+          </ion-col>
+        </ion-row>
+      <ion-buttons style="visibility: hidden;" end>
+          <button (click)="notify()" ion-button icon-only>
+          <ion-icon style="color:rgb(250, 245, 245);" name="notifications-outline"></ion-icon>
+          </button>
+          </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content style="font-style: italic">
+    
+      <ion-slides pager="true">
+        <ion-slide *ngFor="let slide of slides">
+          <img style="height: 200px;
+          width: 100%;" [src]="slide.ground_picture_url"/>
+    
+        </ion-slide>
+      </ion-slides>
+      <ion-card>
+        <ion-row>
+          <ion-col>
+            <div icon-start clear small>
+              <div class="stad_name" [ngClass]="{'astad_name' : clanguage == 'ar'}">{{details.ground_name}}</div>
+              <div class="stad_loc" [ngClass]="{'astad_loc' : clanguage == 'ar'}" >{{details.ground_location}}</div>
+            </div>
+          </ion-col>
+          <ion-col align-self-center text-center>
+            <ion-note>
+             {{"Starting from" | translate}}
+            </ion-note>
+            <div class="stad_amt"><span class="stad_rate">{{details.discount_price}}</span>AED</div>
+          </ion-col>
+    
+        </ion-row>
+      </ion-card>
+      <ion-card>
+        <h3 class="stad_name" [ngClass]="{'astad_name' : clanguage == 'ar'}">{{"About stadium" | translate}}</h3>
+        <div>
+          <input type="checkbox" class="read-more-state" id="post-1" />
+        
+          <p class="read-more-wrap">{{"Ground Description" | translate}}. <span class="read-more-target">{{details.ground_about}}</span></p>
+          
+          <label for="post-1" class="read-more-trigger"><ion-icon name="arrow-dropdown" style="padding: 2px 4px;    color: #5bc7c5;"></ion-icon></label>
+        </div>
+      </ion-card>
+      <ion-card>
+        <ion-list>
+            <h3 class="stad_name" [ngClass]="{'astad_name' : clanguage == 'ar'}">{{"Facility" | translate}}</h3>
+          <ion-grid>
+            <ion-row>
+              <ion-col *ngFor="let extra of extras" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+                <span class="fac">{{extra.facility_name}}</span>
+              </ion-col>
+              <!-- <ion-col *ngIf="this.jersy" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+                <span class="fac">Jersy Available</span>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col *ngIf="this.shower" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+                <span class="fac">Shower Available</span>
+              </ion-col>
+              <ion-col *ngIf="this.indoor" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6>
+                <span class="fac">Indoor Available</span>
+              </ion-col> -->
+            </ion-row>
+          </ion-grid>
+          
+    
+        </ion-list>
+      </ion-card>
+    
+      <ion-card  class="avbl-grnd">
+          <ion-list>
+              <h3 class="stad_name" [ngClass]="{'astad_name' : clanguage == 'ar'}">{{"Available Grounds" | translate}}</h3>
+            <ion-grid>
+              <ion-row *ngFor="let size of sizes">
+                <ion-col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12>
+                  <span class="avab" [ngClass]="{'aavab' : clanguage == 'ar'}">{{"Players:" | translate}} {{size.size}} -Size :{{size.ground_sq_ft}}</span>
+                  <span class="avbl-grnd-rate" [ngClass]="{'aavbl-grnd-rate' : clanguage == 'ar'}">{{size.discount_price}} AED</span>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            
+      
+          </ion-list>
+        </ion-card>
+      <div *ngIf = "!callbook" class="book-wrap"><button ion-button class="book-btn" (click)="booknow()">{{"Book Now" | translate}}</button></div>
+      <div *ngIf = "callbook" class="book-wrap"><button ion-button class="book-btn" (click)="callnow()">{{"Call Now" | translate}}</button></div>
+    </ion-content>
+    

@@ -1,0 +1,16 @@
+<ion-card>
+  <ion-card-header (click)="toggleAccordian()">
+    <ion-list>
+      <ion-item color="primary">
+        <button ion-button clear large icon-only item-right>
+          <ion-icon style="color:black" [name]="icon"></ion-icon>
+        </button>
+        <ion-icon style="color:black" name={{iconname}}></ion-icon>
+        <strong>{{ title }}</strong>
+      </ion-item>
+    </ion-list>
+  </ion-card-header>
+  <ion-card-content #cc>
+    <ng-content></ng-content>
+  </ion-card-content>
+</ion-card>

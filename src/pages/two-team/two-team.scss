@@ -1,0 +1,237 @@
+page-two-team {
+    .toolbar-title-md {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #ffffff;
+    }
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #ffffff;
+        background-color: transparent;
+    }
+    .header-md::after,
+    .tabs-md[tabsPlacement="top"] > .tabbar::after,
+    .footer-md::before,
+    .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+      left: 0;
+      bottom: -5px;
+      background-position: left 0 top -2px;
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background-image: none;
+    //  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAHBAMAAADzDtBxAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMUCS0gBIh/TXEAAAAaSURBVAjXYxCEAgY4UIICBmMogMsgFLtAAQCNSwXZKOdPxgAAAABJRU5ErkJggg==);
+      background-repeat: repeat-x;
+      content: "";
+    }
+    .toolbar-background-md {
+        border-color: #b2b2b2;
+        background-image: linear-gradient(to right, #114090, #132866);
+        border-bottom-right-radius: 14%;
+        border-bottom-left-radius: 14%;
+    }
+
+.SwipedTabs-tabs ion-segment-button
+      {
+          border:none !important;
+          color:gray !important;
+          background-color:white !important;
+      }
+      .SwipedTabs-tabs ion-segment-button .SwipedTabs-activeTab
+      {
+            color:black !important;
+      }
+      .SwipedTabs-tabs
+      {
+          border-bottom:solid 1px #e6e6e6 !important;
+      }
+
+      .SwipedTabs-tabs1
+      {
+          border-bottom:solid 1px #e6e6e6 !important;
+          margin-top:0%;
+      }
+
+      .toolbar-title-md {
+        // padding: 11px 1px;
+        font-size: 1.75rem;
+        font-weight: 400;
+        color: #fff;
+    }
+    .segment-md .segment-button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 0;
+        height: 4.2rem;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(0, 0, 0, 0.1);
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 4rem;
+        text-transform: uppercase;
+        color: #2A2C43;
+        background-color: transparent;
+        opacity: 0.7;
+        -webkit-transition: 100ms all linear;
+        transition: 100ms all linear;
+        padding: 0% 0px;
+    }
+
+    
+
+    .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+        border-color: #f5f7fb;
+        opacity: 1;
+    }
+    ion-footer{
+        left: 0;
+    bottom: 0;
+    // position: initial;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    }
+    shrinking-segment-header {
+ 
+       // background-image:  url("../assets/imgs/s2.png");
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+ 
+        img {
+            border-radius: 50%;
+            width: 75px;
+            height: auto;
+            margin-right: 15px;
+        }
+ 
+    }
+    .baccg {
+        background-image:  url("../assets/imgs/6.png");
+        background-repeat: repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        height: 100%;
+        position: absolute;
+    }
+
+
+    ion-slides {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+
+    .swiper-pagination-bullet {
+        background-color: #fff;
+      }
+      .no-padding-top .scroll-content{
+          padding-top: 0 !important;
+      }
+
+      .SwipedTabs-indicatorSegment {
+        -webkit-transition: 0.3s all;
+        -moz-transition: 0.3s all;
+        -o-transition: 0.3s all;
+        transition: 0.3s all;
+        transform-origin: top 0 left 0;
+        height: 1px;
+        position: relative;
+        top: -2px;
+        background-color: #a94d4d !important;
+    }
+
+    
+    .SwipedTabs-indicatorSegmentt {
+        -webkit-transition: 0.3s all;
+        -moz-transition: 0.3s all;
+        -o-transition: 0.3s all;
+        transition: 0.3s all;
+        transform-origin: top 0 left 0;
+        height: 1px;
+        position: relative;
+        top: -2px;
+        background-color: #575050 !important;
+    }
+
+    .transparent{
+        background: rgba(255, 255, 255, 0.7);
+        border: none;
+        position: relative;
+        outline: none;
+        padding-top: 6%
+        
+    }
+    .transparentt{
+        background: rgba(255, 255, 255, 0);
+        border: none;
+        position: relative;
+        outline: none;
+       
+      
+}
+
+
+.tabs-md .tabbar {
+    background: #a94d4d;
+}
+
+.tabs-md .tab-button {
+    min-height: 5.6rem;
+    font-weight: normal;
+    color: #f4f4f4;
+    padding: 0;
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+    color: #f4f4f4;
+    -webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0, -2px, 0);
+}
+
+.tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
+    margin-top: 4px;
+    margin-bottom: 0;
+    color: aliceblue;
+}
+
+.tabs-md .tab-button-icon {
+    margin-top: 1px;
+    min-width: 2.4rem;
+    font-size: 2.4rem;
+    color: rgba(251, 242, 242, 0.7);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    -webkit-transform-origin: 50% 150%;
+    transform-origin: 50% 150%;
+}
+ion-fab{
+    display: flex;
+  }
+
+.fab-md-primary{
+   // background: url(../assets/imgs/image1.png);
+    background-size: cover;
+    background-size: contain;
+    background-position: left;
+    margin: 0 auto;
+  }
+  .fab-md-secondary{
+  //  background: url(../assets/imgs/image2.png);
+    background-size: cover;
+    background-size: contain;
+    
+  }
+
+  .list-md {
+    margin: -22px 0 0px;
+}
+}

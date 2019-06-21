@@ -1,0 +1,166 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{"Split Payment" | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+    <ion-content padding class="card-background-page">
+       
+
+        <ion-card >
+          <img src="../assets/imgs/payment-bg1.png" />
+  
+          <div class="card-title" [ngClass]="{'acard-title' : clanguage == 'ar'}"  >
+            <h1>{{"Total Amount" | translate}}</h1>
+            <h2>AED {{this.amounnt}} </h2>
+      
+          </div>
+          <div class="split_wrapper">
+          <form [formGroup]="invoiceForm">
+              <div formArrayName="itemRows">
+            <div *ngFor="let itemrow of invoiceForm.controls.itemRows.controls; let ii=index"  [formGroupName]="ii">
+           
+            
+          <div class="areacontent" [ngClass]="{'aareacontent' : clanguage == 'ar'}" >
+           
+           
+                  
+              <ion-list>
+      
+              <ion-item>
+                <ion-label>{{"Enter Amount" | translate}}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-input type="text" formControlName="amount" placeholder="Amount"></ion-input>
+              </ion-item>
+ 
+              <div style = "display: flex" *ngIf = "this.name">
+              <ion-item>
+                  <ion-label>{{"Player Name:" | translate}} </ion-label>
+                </ion-item>
+               <p class = "playername"> {{this.name[ii]}}</p>    
+              </div>
+      
+              <ion-card style="padding: 0%">
+                <ion-item style="padding: 0%">
+                  <ion-label>{{"Select Your Friends" | translate}}</ion-label>
+                </ion-item>
+              
+              <ion-searchbar
+               [showCancelButton]="shouldShowCancel"
+              (ionInput)="getItems($event)"
+              (ionCancel)="onCancel($event)">
+            </ion-searchbar>
+        
+            <ion-list style="height: 131px;
+            overflow-y: scroll;" >
+      
+        
+                       <ion-item   *ngFor="let player of players;let i= index" >
+        
+                          <ion-avatar item-start> 
+                              <img style=" border-radius: 50%;
+                              overflow: hidden;
+                              width: 40px;
+                              height: 40px" [src]="player.player_image_url">
+                        </ion-avatar > 
+        
+                        <ion-label (click)="itemClicked(player,ii)"  style="display:inline-block"> 
+                            <p style="color: black">{{player.player_fname}} {{player.player_lname}} ({{player.player_role}})</p>
+                            <p>{{player.player_mnumber}}</p>
+                         
+                          </ion-label>
+        
+                      
+                      </ion-item> 
+      
+                  
+        
+                    
+          </ion-list>
+        </ion-card>
+          <div class="example-center">
+              <button [disabled]="!isenabled" style = "font-size:12px;font-weight:600" (click)="send(ii)" ion-button>{{"SEND REQUEST" | translate}}
+              </button>
+            </div>
+        
+        <div style="display:flex;margin-top: 7%;margin-left: 5%">
+            <hr style="background-color: #3b3b3b;
+            margin-top: 7%;
+            margin-left: 5%;
+            width: 40%;
+            margin: 0">
+        
+           <span style="position: relative;
+           bottom: 7px;
+           margin-left: 5%;
+           color: #153376;
+           font-size: medium;
+           margin-right: 5%;">{{"OR" | translate}}</span>
+        
+        
+           <hr style="background-color: #3b3b3b;
+           margin-top: 5%;
+           margin-left: 5%;
+           width: 40%;
+           margin: 0">
+          </div>
+        
+          <div class="example-center">
+              <button style = "font-size:12px;font-weight:600"(click)="share()"  ion-button>{{"INVITE FRIENDS" | translate}}
+              </button>
+            </div>
+            <ion-fab style="position: static">
+                <ion-row>
+                 
+                  <ion-col>
+                    <button (click)="addNewRow()" ion-fab fab-fixed color="team-create" ></button>
+                    <span class="split_more" [ngClass]="{'asplit_more' : clanguage == 'ar'}">{{"Add More Split Payment" | translate}}</span>
+                 
+                    <!-- <h6 class="join-title"></h6> -->
+                  </ion-col>
+<br>
+<br>
+                  <ion-col *ngIf="invoiceForm.controls.itemRows.controls.length > 1">
+                      <button   (click)="deleteRow(ii)" [ngClass]="{'aremoveicon' : clanguage == 'ar'}" ion-fab fab-fixed color="team-createe" ></button>
+                      <span class="remove" [ngClass]="{'aremove' : clanguage == 'ar'}">{{"Remove" | translate}}</span>
+                   
+                      <!-- <h6 class="join-title"></h6> -->
+                    </ion-col>
+                
+                </ion-row>
+              </ion-fab>
+        
+          
+          </ion-list>
+
+         
+        </div>
+ 
+              
+    </div>
+  </div> 
+</form>
+</div>
+
+<!-- <button style = "bottom: 100px"   (click)="submit()" ion-button>Know your Balance amount to Pay</button> -->
+
+<div style= "display:inline"  *ngIf = "this.total">
+    <ion-item style="bottom: 100px;">
+        <span>{{"Remaining Amount to Pay:" | translate}} </span>
+        <span style="font-size: 19px;
+        font-weight: 600;
+        margin-left: 8px;
+        color: #132a6b;"> AED  {{this.total}} </span>
+      </ion-item>
+  
+      <button style="bottom: 90px;"  (click)="pay()" ion-button>{{"Pay Now" | translate}}</button>
+
+    </div>
+
+      </ion-card>    
+      
+    
+      </ion-content>
