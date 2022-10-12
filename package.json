@@ -62,7 +62,7 @@
     "com-sarriaroman-photoviewer": "1.2.1",
     "com.darktalker.cordova.screenshot": "0.1.6",
     "com.paypal.cordova.mobilesdk": "3.5.0",
-    "cordova-android": "6.4.0",
+    "cordova-android": "11.0.0",
     "cordova-multidex": "git+https://github.com/jwall149/cordova-multidex.git",
     "cordova-plugin-add-swift-support": "1.7.1",
     "cordova-plugin-calendar": "5.1.4",
